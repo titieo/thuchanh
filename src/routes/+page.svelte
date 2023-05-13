@@ -1,8 +1,8 @@
 <script>
 	// import Date from './lib/Date.svelte';
-	// import 'virtual:uno.css';
+	import 'virtual:uno.css';
 	// TODO: Check back on this
-	import 'uno.css';
+	// import 'uno.css';
 	import { presetUno } from 'unocss';
 	import dayjs from 'dayjs';
 	const startDate = dayjs('2023-05-02T00:00:00.000Z');

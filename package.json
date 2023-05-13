@@ -15,6 +15,7 @@
 		"svelte-fullpage": "^1.0.9",
 		"unocss": "^0.51.12",
 		"unocss-preset-scrollbar": "^0.2.1",
+		"unplugin-auto-import": "^0.15.3",
 		"vite": "^4.3.5"
 	},
 	"type": "module",
