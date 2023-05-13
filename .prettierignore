@@ -1,0 +1,11 @@
+
+.vscode/
+.husky/
+.yarnrc.yml
+.travis.yml
+pnpm-lock.yaml
+
+##############################
+# Minified files
+*.min.js
+*.min.css
