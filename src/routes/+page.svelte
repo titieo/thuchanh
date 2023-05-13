@@ -1,6 +1,8 @@
 <script>
 	// import Date from './lib/Date.svelte';
-	import 'virtual:uno.css';
+	// import 'virtual:uno.css';
+	// TODO: Check back on this
+	import 'uno.css';
 	import { presetUno } from 'unocss';
 	import dayjs from 'dayjs';
 	const startDate = dayjs('2023-05-02T00:00:00.000Z');
@@ -38,7 +40,7 @@
 	</FullpageSection>
 
 	<FullpageSection style="height: 100vh;">
-		<div class="grid gap-5 grid-cols-2 h-screen w-screen">
+		<div class="grid gap-4 grid-cols-[max-content_1fr] h-screen w-screen">
 			<picture class="max-w-max">
 				<source media="(min-width:650px)" srcset="0.green_tara.png" />
 				<source media="(min-width:465px)" srcset="0.green_tara.png" />
@@ -50,7 +52,7 @@
 				/>
 			</picture>
 			<div
-				class="px-4 py-10 scrollbar scrollbar-rounded overflow-y-scroll flex flex-col gap-6 flex-grow"
+				class="px-4 py-10 scrollbar scrollbar-rounded overflow-y-scroll flex flex-col gap-4"
 			>
 				<Tara {page} {dates} {startDate} />
 			</div>
