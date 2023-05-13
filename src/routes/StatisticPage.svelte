@@ -1,9 +1,9 @@
 <script>
-	export let pictureName;
+	export let pictureName, reverse;
 </script>
 
 <div class="grid gap-4 grid-cols-[max-content_1fr] h-screen w-screen">
-	<picture class="max-w-max">
+	<picture class={reverse ? 'order-1 justify-self-end max-w-max' : 'max-w-max'}>
 		<source media="(min-width:650px)" srcset={pictureName} />
 		<source media="(min-width:465px)" srcset={pictureName} />
 		<img src={pictureName} alt="Flowers" style="width:auto;" class="h-screen" />
