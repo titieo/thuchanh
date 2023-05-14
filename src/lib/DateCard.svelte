@@ -1,5 +1,5 @@
 <script>
-	import InfiniteScroll from 'svelte-infinite-scroll';
+	// import InfiniteScroll from 'svelte-infinite-scroll';
 	import dayjs from 'dayjs';
 	import customParseFormat from 'dayjs/plugin/customParseFormat';
 	dayjs.extend(customParseFormat);
@@ -16,11 +16,12 @@
 		<!-- {dayjs().format('DD/MM/YYYY')} -->
 	</h3>
 	<slot />
-	<InfiniteScroll
+	<!-- TODO: Infinite scroll -->
+	<!-- <InfiniteScroll
 		threshold={100}
 		on:loadMore={() => page++}
 		class="flex-shrink"
-	/>
+	/> -->
 </div>
 
 <style>

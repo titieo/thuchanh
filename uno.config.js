@@ -29,5 +29,6 @@ export default defineConfig({
 			},
 		}),
 		presetTypography(),
+		presetScrollbar(),
 	],
 });
