@@ -49,7 +49,7 @@
 	<FullpageSection style="height: 100vh;">
 		<FullpageSlide>
 			<StatisticPage pictureName="0.green_tara.png">
-				{#each dates as { tara, taras_homage, lay_dai, lhs, hang_phuc, tam, qt_chu_tara }, i}
+				{#each tData as { tara, taras_homage, lay_dai, lhs, hang_phuc, tam, qt_chu_tara }, i}
 					<DateCard {page} {dates} {startDate} order={i}>
 						<p class="text-base text-right">
 							{tara ? tara * 108 : 0} Biến Green Tara ({hang_phuc
