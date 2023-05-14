@@ -9,7 +9,8 @@
 		<img src={pictureName} alt="Flowers" style="width:auto;" class="h-screen" />
 	</picture>
 	<div
-		class="px-4 py-10 scrollbar scrollbar-rounded overflow-y-scroll flex flex-col gap-4"
+		class="scrollbar scrollbar-rounded overflow-y-scroll flex flex-col gap-4"
+		p="x-4 y-10"
 	>
 		<slot />
 	</div>

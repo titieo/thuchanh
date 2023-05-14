@@ -1,27 +1,33 @@
 <script>
-	// import Date from './lib/Date.svelte';
 	import 'virtual:uno.css';
-	// TODO: Check back on this
-	// import 'uno.css';
 	import { presetUno } from 'unocss';
 	import dayjs from 'dayjs';
-	const startDate = dayjs('2023-05-02T00:00:00.000Z');
+
 	import allDates from '$lib/data.json';
 	import { Fullpage, FullpageSection, FullpageSlide } from 'svelte-fullpage';
 	import StatisticPage from './StatisticPage.svelte';
+	import DateCard from './DateCard.svelte';
+
+	const startDate = dayjs('2023-05-02T00:00:00.000Z');
 
 	let page = 0;
-	let size = 20;
+	let size = 10;
 	let dates = [];
 
+	export let data;
+	let { tData } = data;
+	$: ({ tData } = data);
+	tData.sort((a, b) => a.id - b.id); // b - a for reverse sort
+	console.log('This is data');
+	console.log(tData);
 	$: dates = [...dates, ...allDates.splice(size * page, size * (page + 1) - 1)];
-
-	import DateCard from './DateCard.svelte';
 </script>
 
 <svelte:head>
 	<title>Tu tập</title>
 </svelte:head>
+
+<!-- TODO: https://unocss.dev/presets/wind#breakpoints - Add breakpoints -->
 
 <Fullpage>
 	<FullpageSection style="background-color: #fdd9aa">
@@ -43,12 +49,14 @@
 	<FullpageSection style="height: 100vh;">
 		<FullpageSlide>
 			<StatisticPage pictureName="0.green_tara.png">
-				{#each dates as { tara, taras_homage, lay_dai, lhs, hang_phuc, tam, chan_ngon }, i}
+				{#each dates as { tara, taras_homage, lay_dai, lhs, hang_phuc, tam, qt_chu_tara }, i}
 					<DateCard {page} {dates} {startDate} order={i}>
 						<p class="text-base text-right">
-							{tara ? tara * 108 : 0} Biến Green Tara ({tara ? tara : 0} Tràng) -
-							Tán thán 21 Tara: {taras_homage ? taras_homage : 0} Lần <br />
-							Quán tưởng chân ngôn Tara: {chan_ngon ? chan_ngon : 0} Phút
+							{tara ? tara * 108 : 0} Biến Green Tara ({hang_phuc
+								? hang_phuc
+								: 0} Phút) - Tán thán 21 Tara: {taras_homage ? taras_homage : 0}
+							Lần <br />
+							Quán tưởng chân ngôn Tara: {qt_chu_tara ? qt_chu_tara : 0} Phút
 
 							<!-- <li>Lạy dài: {lay_dai ? lay_dai : 0} Lần</li>
                         <li>Liên Hoa Sinh: {lhs ? lhs * 108 : 0} Biến</li>
