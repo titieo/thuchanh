@@ -1,7 +1,7 @@
 <script>
 	import 'virtual:uno.css';
 	import { presetUno } from 'unocss';
-
+	import { base } from '$app/paths';
 	// import allDates from '$lib/data.json';
 	// import { Fullpage, FullpageSection, FullpageSlide } from 'svelte-fullpage';
 	// TODO: Check back on svelte-fullpage
@@ -36,7 +36,7 @@
 >
 	<!-- style="background-image: linear-gradient(to bottom right,#fdd9aa,#f1c89b)" -->
 	<div class="place-self-center flex text-xl gap-2">
-		<a href="/tara/" class="flex flex-col items-center">
+		<a href="{base}/tara" class="flex flex-col items-center">
 			<img
 				class="w-30 h-30 rounded-md hover:rounded-full duration-600 transition-all ease-out"
 				src="tam.jpg"
@@ -45,7 +45,7 @@
 			/>
 			Green Tara</a
 		>
-		<a href="/guru_rinpoche/" class="flex flex-col items-center">
+		<a href="{base}/guru_rinpoche" class="flex flex-col items-center">
 			<img
 				class="w-30 h-30 rounded-md hover:rounded-full duration-600 transition-all ease-in"
 				src="hung.jpg"
