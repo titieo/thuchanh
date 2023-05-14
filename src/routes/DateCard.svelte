@@ -1,14 +1,19 @@
 <script>
-	export let dates, startDate, page, order;
 	import InfiniteScroll from 'svelte-infinite-scroll';
+	import dayjs from 'dayjs';
+	import customParseFormat from 'dayjs/plugin/customParseFormat';
+	dayjs.extend(customParseFormat);
+	export let page, created_at;
+	// export let dates,order;
+	() => console.log(created_at, typeof created_at);
 </script>
 
-<div
-	class="card max-h-[20rem] mr-16 flex gap-4 items-center justify-between"
-	style="order:{dates.length - order}"
->
+<div class="card max-h-[20rem] mr-16 flex gap-4 items-center justify-between">
+	<!-- style="order:{dates.length - order}" -->
 	<h3 class="text-lg">
-		{startDate.add(order, 'd').format('DD/MM/YYYY')}
+		<!-- {startDate.add(order, 'd').format('DD/MM/YYYY')}? -->
+		{created_at}
+		<!-- {dayjs().format('DD/MM/YYYY')} -->
 	</h3>
 	<slot />
 	<InfiniteScroll
