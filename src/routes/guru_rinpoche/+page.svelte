@@ -17,6 +17,7 @@
 	$: ({ dates } = data);
 	dates.sort((a, b) => a.id - b.id); // b - a for reverse sort
 	console.log(dates);
+	let dates_length = dates.length;
 	// $: dates = [...dates, ...allDates.splice(size * page, size * (page + 1) - 1)];
 </script>
 
@@ -28,8 +29,8 @@
 
 <main class="overflow-y-hidden">
 	<StatisticPage pictureName="guru_rinpoche.webp" reverse>
-		{#each dates as { lhs, seven_lines, created_at }}
-			<DateCard {page} {created_at}>
+		{#each dates as { lhs, seven_lines, created_at }, i}
+			<DateCard {page} {created_at} {dates_length} order={i}>
 				<p class="text-base text-right">
 					{lhs ? lhs : 0} Biến Guru Rinpoche - Tán 7 dòng: {seven_lines
 						? seven_lines

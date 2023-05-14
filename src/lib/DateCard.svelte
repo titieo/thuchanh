@@ -3,12 +3,15 @@
 	import dayjs from 'dayjs';
 	import customParseFormat from 'dayjs/plugin/customParseFormat';
 	dayjs.extend(customParseFormat);
-	export let page, created_at;
+	export let created_at, dates_length, order;
 	// export let dates,order;
 	() => console.log(created_at, typeof created_at);
 </script>
 
-<div class="card max-h-[20rem] mr-16 flex gap-4 items-center justify-between">
+<div
+	class="card max-h-[20rem] mr-16 flex gap-4 items-center justify-between"
+	style="order:{dates_length - order}"
+>
 	<!-- style="order:{dates.length - order}" -->
 	<h3 class="text-lg">
 		<!-- {startDate.add(order, 'd').format('DD/MM/YYYY')}? -->

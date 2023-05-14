@@ -16,19 +16,16 @@
 	$: ({ dates } = data);
 	dates.sort((a, b) => a.id - b.id); // b - a for reverse sort
 	console.log(dates);
+	let dates_length = dates.length;
 	// $: dates = [...dates, ...allDates.splice(size * page, size * (page + 1) - 1)];
 </script>
-
-<svelte:head>
-	<title>Tu tập</title>
-</svelte:head>
 
 <!-- TODO: https://unocss.dev/presets/wind#breakpoints - Add breakpoints -->
 
 <main style="height: 100vh" class="h-screen overflow-y-hidden">
 	<StatisticPage pictureName="0.green_tara.png">
 		{#each dates as { tara, taras_homage, created_at, lay_dai, lhs, hang_phuc, tam, qt_chu_tara }, i}
-			<DateCard {page} {created_at}>
+			<DateCard {page} {created_at} {dates_length} order={i}>
 				<p class="text-base text-right">
 					{tara ? tara * 108 : 0} Biến Green Tara ({hang_phuc ? hang_phuc : 0} Phút
 					Kiết Già Hàng Phục) - Tán thán 21 Tara: {taras_homage
