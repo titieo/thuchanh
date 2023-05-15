@@ -5,9 +5,6 @@
 	// import allDates from '$lib/data.json';
 	// import { Fullpage, FullpageSection, FullpageSlide } from 'svelte-fullpage';
 	// TODO: Check back on svelte-fullpage
-	import StatisticPage from '$lib/StatisticPage.svelte';
-	import DateCard from '$lib/DateCard.svelte';
-
 	// const startDate = dayjs('2023-05-02T00:00:00.000Z');
 	// import dayjs from 'dayjs';
 

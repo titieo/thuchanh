@@ -11,6 +11,7 @@
 		"@sveltejs/adapter-auto": "^2.0.1",
 		"@sveltejs/adapter-static": "^2.0.2",
 		"@sveltejs/kit": "^1.16.3",
+		"date-picker-svelte": "^2.4.3",
 		"svelte": "^3.59.1",
 		"svelte-fullpage": "^1.0.9",
 		"unocss": "^0.51.12",
@@ -22,6 +23,7 @@
 	"dependencies": {
 		"@supabase/supabase-js": "^2.21.0",
 		"dayjs": "^1.11.7",
+		"felte": "^1.2.7",
 		"svelte-infinite-scroll": "^2.0.1"
 	}
 }
