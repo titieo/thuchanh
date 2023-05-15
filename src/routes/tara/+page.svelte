@@ -9,6 +9,9 @@
 	import { supabase } from '$lib/supabaseClient';
 	import dayjs from 'dayjs';
 
+	import { fade } from 'svelte/transition';
+	let visible = false;
+
 	let page = 0;
 	let size = 10;
 	let created_at = new Date();
@@ -16,18 +19,29 @@
 	const { form } = createForm({
 		onSubmit: async (values, { reset }) => {
 			/* call to an api */
-
+			const created_date = dayjs(created_at).format('DD/MM/YYYY');
 			const { data, error } = await supabase.from('tara').insert([
 				{
 					tara: values.tara,
 					taras_homage: values.taras_homage,
 					hang_phuc: values.hang_phuc,
-					created_at: dayjs(created_at).format('DD/MM/YYYY'),
+					created_at: created_date,
 				},
 			]);
 
+			dates = [
+				...dates,
+				{
+					tara: values.tara,
+					taras_homage: values.taras_homage,
+					hang_phuc: values.hang_phuc,
+					created_at: created_date,
+				},
+			];
+
 			console.log(values);
 			reset();
+			visible = false;
 		},
 	});
 
@@ -65,13 +79,35 @@
 				</p></DateCard
 			>
 		{/each}
-		<div
-			class="absolute top-0 left-0 bottom-0 right-0 flex justify-center items-center"
-			backdrop="blur-md brightness-75"
+
+		<!-- Button to open the form -->
+		<button
+			class="absolute bottom-2 right-2 rounded-full cursor-pointer bg-green-600 text-white p-2 w-14 h-14 flex justify-center items-center"
+			on:click={() => (visible = true)}
+			><svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="32"
+				height="32"
+				viewBox="0 0 24 24"
+				><path
+					fill="currentColor"
+					d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2Z"
+				/></svg
+			></button
 		>
+		<!-- Start of the form -->
+		{#if visible}
+			<div
+				class="absolute top-0 left-0 bottom-0 right-0 cursor-pointer"
+				backdrop="blur-md brightness-75"
+				on:click={() => (visible = false)}
+			/>
+			<!-- position: absolute; top: 50%; left: 50%; transform:
+				translate(-50%,-50%); -->
 			<form
 				use:form
-				class="bg-dark-500 px-10 py-16 rounded gap-4 text-white grid"
+				class="bg-dark-500 px-10 py-16 rounded gap-4 text-white grid
+                    absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
 				grid="cols-[1fr_1fr] rows-4 "
 			>
 				<div class="col-start-1 row-start-1">
@@ -104,22 +140,23 @@
 						closeOnSelection={false}
 						placeholder="dd/MM/yyyy"
 						required
+						class="py-2 px-4 mt-2 rounded-md"
 					/>
 				</div>
 				<button
 					type="submit"
-					class="relative inline-flex items-center justify-start inline-block px-6 py-2 overflow-hidden font-medium transition-all bg-green-600 rounded-full hover:bg-white group cursor-pointer col-start-1 row-start-4 justify-self-start"
+					class="relative inline-flex items-center justify-start inline-block px-8 py-4 overflow-hidden font-medium transition-all bg-green-600 rounded-full hover:bg-white group cursor-pointer col-start-1 row-start-4 justify-self-start self-center"
 				>
 					<span
 						class="absolute inset-0 border-0 group-hover:border-[25px] ease-linear duration-100 transition-all border-white rounded-full"
 					/>
 					<span
-						class="relative w-full text-left text-base text-white transition-colors duration-200 ease-in-out group-hover:text-green-600"
-						>SUBMIT</span
+						class="relative w-full text-left text-base text-white transition-colors duration-200 ease-in-out group-hover:text-green-600 text-lg"
+						>Submit</span
 					>
 				</button>
 			</form>
-		</div>
+		{/if}
 	</StatisticPage>
 </main>
 
