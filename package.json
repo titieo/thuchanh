@@ -21,7 +21,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@supabase/supabase-js": "^2.21.0",
+		"@supabase/supabase-js": "^2.22.0",
 		"dayjs": "^1.11.7",
 		"felte": "^1.2.7",
 		"svelte-infinite-scroll": "^2.0.1"
