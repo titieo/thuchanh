@@ -2,14 +2,47 @@
 	import 'virtual:uno.css';
 	import { presetUno } from 'unocss';
 
+	import { createForm } from 'felte';
+	import { DateInput } from 'date-picker-svelte';
+
 	import StatisticPage from '$lib/StatisticPage.svelte';
 	import DateCard from '$lib/DateCard.svelte';
-
-	// const startDate = dayjs('2023-05-02T00:00:00.000Z');
-	// import dayjs from 'dayjs';
+	import { supabase } from '$lib/supabaseClient';
+	import OpenFormButton from '$lib/OpenFormButton.svelte';
+	import SubmitForm from '$lib/SubmitForm.svelte';
+	import dayjs from 'dayjs';
 
 	let page = 0;
 	let size = 10;
+	let visible = false;
+	let created_at = new Date();
+	// let dates = [];
+	const { form } = createForm({
+		onSubmit: async (values, { reset }) => {
+			/* call to an api */
+			const created_date = dayjs(created_at).format('DD/MM/YYYY');
+			const { data, error } = await supabase.from('lhs').insert([
+				{
+					lhs: values.lhs,
+					seven_lines: values.seven_lines,
+					created_at: created_date,
+				},
+			]);
+
+			dates = [
+				...dates,
+				{
+					lhs: values.lhs,
+					seven_lines: values.seven_lines,
+					created_at: created_date,
+				},
+			];
+
+			console.log(values);
+			reset();
+			visible = false;
+		},
+	});
 	// let dates = [];
 
 	export let data;
@@ -39,6 +72,38 @@
 			>
 		{/each}
 	</StatisticPage>
+
+	<OpenFormButton bind:visible additionalClasses="bg-green-600" />
+
+	<!-- Start of the form -->
+	{#if visible}
+		<SubmitForm bind:visible buttonColor="green-600" {form}>
+			<div class="col-start-1 row-start-1">
+				<h4>Guru Rinpoche (Biến)</h4>
+				<input type="number" name="lhs" class="py-2 px-4 mt-2 rounded-md" />
+			</div>
+			<div class="col-start-1 row-start-2">
+				<h4>Tán 7 dòng Guru Rinpoche (Biến)</h4>
+				<input
+					type="number"
+					name="seven_lines"
+					class="py-2 px-4 mt-2 rounded-md"
+				/>
+			</div>
+			<div class="date-wrapper">
+				<h4>Ngày</h4>
+				<DateInput
+					bind:value={created_at}
+					format="dd/MM/yyyy"
+					visible={true}
+					closeOnSelection={false}
+					placeholder="dd/MM/yyyy"
+					required
+					class="py-2 px-4 mt-2 rounded-md"
+				/>
+			</div>
+		</SubmitForm>
+	{/if}
 </main>
 
 <style>
