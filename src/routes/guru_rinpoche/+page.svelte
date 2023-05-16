@@ -9,13 +9,17 @@
 	import StatisticPage from '$lib/StatisticPage.svelte';
 	import DateCard from '$lib/DateCard.svelte';
 	import { supabase } from '$lib/supabaseClient';
-	import OpenFormButton from '$lib/OpenFormButton.svelte';
+	import OpenMenuButton from '$lib/OpenMenuButton.svelte';
+	import Menu from '$lib/Menu.svelte';
+	// import OpenFormButton from '$lib/OpenFormButton.svelte';
 	import SubmitForm from '$lib/SubmitForm.svelte';
 	import StatisticLineGraph from '$lib/StatisticLineGraph.svelte';
 
 	let page = 0;
 	let size = 10;
-	let visible = false;
+	let visible = false,
+		menuVisible = false;
+
 	let created_at = new Date();
 	// let dates = [];
 	const { form } = createForm({
@@ -105,44 +109,44 @@
 		/> -->
 		<!-- TODO: Fix the graph -->
 	</StatisticPage>
-
-	<OpenFormButton bind:visible additionalClasses="bg-green-600" />
-
-	<!-- Start of the form -->
-	{#if visible}
-		<SubmitForm
-			bind:visible
-			buttonColor="green-600"
-			{form}
-			grid="cols-[1fr_1fr] rows-4"
-		>
-			<div class="col-start-1 row-start-1">
-				<h4>Guru Rinpoche (Biến)</h4>
-				<input type="number" name="lhs" class="py-2 px-4 mt-2 rounded-md" />
-			</div>
-			<div class="col-start-1 row-start-2">
-				<h4>Tán 7 dòng Guru Rinpoche (Biến)</h4>
-				<input
-					type="number"
-					name="seven_lines"
-					class="py-2 px-4 mt-2 rounded-md"
-				/>
-			</div>
-			<div class="date-wrapper">
-				<h4>Ngày</h4>
-				<DateInput
-					bind:value={created_at}
-					format="dd/MM/yyyy"
-					visible={true}
-					closeOnSelection={false}
-					placeholder="dd/MM/yyyy"
-					required
-					class="py-2 px-4 mt-2 rounded-md"
-				/>
-			</div>
-		</SubmitForm>
-	{/if}
 </main>
+<!-- <OpenFormButton bind:visible additionalClasses="bg-green-600" /> -->
+<OpenMenuButton bind:menuVisible />
+<Menu {menuVisible} bind:visible />
+<!-- Start of the form -->
+{#if visible}
+	<SubmitForm
+		bind:visible
+		buttonColor="green-600"
+		{form}
+		grid="cols-[1fr_1fr] rows-4"
+	>
+		<div class="col-start-1 row-start-1">
+			<h4>Guru Rinpoche (Biến)</h4>
+			<input type="number" name="lhs" class="py-2 px-4 mt-2 rounded-md" />
+		</div>
+		<div class="col-start-1 row-start-2">
+			<h4>Tán 7 dòng Guru Rinpoche (Biến)</h4>
+			<input
+				type="number"
+				name="seven_lines"
+				class="py-2 px-4 mt-2 rounded-md"
+			/>
+		</div>
+		<div class="date-wrapper">
+			<h4>Ngày</h4>
+			<DateInput
+				bind:value={created_at}
+				format="dd/MM/yyyy"
+				visible={true}
+				closeOnSelection={false}
+				placeholder="dd/MM/yyyy"
+				required
+				class="py-2 px-4 mt-2 rounded-md"
+			/>
+		</div>
+	</SubmitForm>
+{/if}
 
 <style>
 	:global(body) {
