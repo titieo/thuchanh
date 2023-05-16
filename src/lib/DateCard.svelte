@@ -9,7 +9,7 @@
 </script>
 
 <div
-	class="card max-h-[20rem] mr-16 flex gap-4 items-center justify-between"
+	class="card max-h-[20rem] mr-16 group flex gap-4 items-center justify-between"
 	style="order:{dates_length - order}"
 >
 	<!-- style="order:{dates.length - order}" -->

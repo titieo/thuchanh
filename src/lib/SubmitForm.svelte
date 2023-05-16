@@ -1,5 +1,5 @@
 <script>
-	export let visible, buttonColor, form;
+	export let visible, buttonColor, form, gridClasses;
 	import { fade } from 'svelte/transition';
 </script>
 
@@ -18,13 +18,13 @@
 	<slot />
 	<button
 		type="submit"
-		class="relative inline-flex items-center justify-start inline-block px-8 py-4 overflow-hidden font-medium transition-all bg-{buttonColor} rounded-full hover:bg-white group cursor-pointer col-start-1 row-start-4 justify-self-start self-center"
+		class="relative inline-flex items-center justify-start inline-block px-8 py-4 overflow-hidden font-medium transition-all bg-{buttonColor} rounded-full hover:bg-white group cursor-pointer col-start-1 row-start-5 justify-self-start self-center"
 	>
 		<span
 			class="absolute inset-0 border-0 group-hover:border-[25px] ease-linear duration-100 transition-all border-white rounded-full"
 		/>
 		<span
-			class="relative w-full text-left text-base text-white transition-colors duration-200 ease-in-out group-hover:text-{buttonColor} text-lg"
+			class="relative w-full text-left text-base text-white transition-colors duration-200 ease-in-out group-hover:text-green-600 text-lg"
 			>Submit</span
 		>
 	</button>

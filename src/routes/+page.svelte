@@ -2,22 +2,8 @@
 	import 'virtual:uno.css';
 	import { presetUno } from 'unocss';
 	import { base } from '$app/paths';
-	// import allDates from '$lib/data.json';
 	// import { Fullpage, FullpageSection, FullpageSlide } from 'svelte-fullpage';
 	// TODO: Check back on svelte-fullpage
-	// const startDate = dayjs('2023-05-02T00:00:00.000Z');
-	// import dayjs from 'dayjs';
-
-	let page = 0;
-	let size = 10;
-	// let dates = [];
-
-	export let data;
-	let { tData } = data;
-	$: ({ tData } = data);
-	tData.sort((a, b) => a.id - b.id); // b - a for reverse sort
-	console.log(tData);
-	// $: dates = [...dates, ...allDates.splice(size * page, size * (page + 1) - 1)];
 </script>
 
 <svelte:head>
@@ -29,22 +15,28 @@
 <!-- <Fullpage> -->
 <main
 	style="background-color: #fdd9aa"
-	class="grid h-screen w-screen overflow-y-hidden grid-cols-[2fr_1fr]"
+	class="grid h-screen w-screen overflow-y-hidden grid-cols-[2fr_1fr] grid-rows-[60vh_40vh]"
 >
 	<!-- style="background-image: linear-gradient(to bottom right,#fdd9aa,#f1c89b)" -->
 	<div class="place-self-center flex text-xl gap-2">
-		<a href="{base}/tara" class="flex flex-col items-center">
+		<a
+			href="{base}/tara"
+			class="flex flex-col items-center no-underline text-black font-bold"
+		>
 			<img
-				class="w-30 h-30 rounded-md hover:rounded-full duration-600 transition-all ease-out"
-				src="tam.jpg"
-				style="object-fit: cover;object-position: top;"
+				class="w-30 h-30 rounded-lg hover:rounded-3xl duration-200 transition-all ease-in-out"
+				src="tam.png"
+				style="object-fit: cover;object-position: 50% 50%;;image-resolution: from-image;"
 				alt=""
 			/>
 			Green Tara</a
 		>
-		<a href="{base}/guru_rinpoche" class="flex flex-col items-center">
+		<a
+			href="{base}/guru_rinpoche"
+			class="flex flex-col items-center no-underline text-black font-bold"
+		>
 			<img
-				class="w-30 h-30 rounded-md hover:rounded-full duration-600 transition-all ease-in"
+				class="w-30 h-30 rounded-lg hover:rounded-3xl duration-200 transition-all ease-in-out"
 				src="hung.jpg"
 				style="object-fit: cover;object-position: top;"
 				alt=""
@@ -52,7 +44,7 @@
 			Guru Rinpoche</a
 		>
 	</div>
-	<picture class="justify-self-end self-end">
+	<picture class="justify-self-end self-end col-start-2 row-start-1 row-span-2">
 		<source media="(min-width:650px)" srcset="main.webp" />
 		<source media="(min-width:465px)" srcset="main.webp" />
 		<img src="main.webp" alt="Flowers" style="width:auto;" class="h-screen" />

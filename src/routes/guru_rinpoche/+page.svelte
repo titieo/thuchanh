@@ -4,13 +4,14 @@
 
 	import { createForm } from 'felte';
 	import { DateInput } from 'date-picker-svelte';
+	import dayjs from 'dayjs';
 
 	import StatisticPage from '$lib/StatisticPage.svelte';
 	import DateCard from '$lib/DateCard.svelte';
 	import { supabase } from '$lib/supabaseClient';
 	import OpenFormButton from '$lib/OpenFormButton.svelte';
 	import SubmitForm from '$lib/SubmitForm.svelte';
-	import dayjs from 'dayjs';
+	import StatisticLineGraph from '$lib/StatisticLineGraph.svelte';
 
 	let page = 0;
 	let size = 10;
@@ -52,6 +53,25 @@
 	console.log(dates);
 	let dates_length = dates.length;
 	// $: dates = [...dates, ...allDates.splice(size * page, size * (page + 1) - 1)];
+
+	// Line Graph
+	let lineGraphDates = dates.slice(-10);
+	// console.log(lineGraphDates);
+	let DataRecord = [];
+	lineGraphDates.forEach((e, i) => {
+		DataRecord.push({
+			x: i,
+			y: e.lhs,
+			y1: e.seven_lines,
+		});
+	});
+	// const x = (DataRecord) => DataRecord.x;
+	const axisY = [(DataRecord) => DataRecord.y, (DataRecord) => DataRecord.y1];
+
+	const bulletLegendItems = [
+		'Guru Rinpoche',
+		'7 Lines Homages to Guru Rinpoche',
+	].map((label) => ({ name: label }));
 </script>
 
 <svelte:head>
@@ -62,22 +82,40 @@
 
 <main class="overflow-y-hidden">
 	<StatisticPage pictureName="guru_rinpoche.webp" reverse>
-		{#each dates as { lhs, seven_lines, created_at }, i}
-			<DateCard {page} {created_at} {dates_length} order={i}>
-				<p class="text-base text-right">
-					{lhs ? lhs : 0} Biến Guru Rinpoche - Tán 7 dòng: {seven_lines
-						? seven_lines
-						: 0} Lần
-				</p></DateCard
-			>
-		{/each}
+		<div
+			class="scrollbar scrollbar-rounded overflow-y-scroll max-h-[20rem] flex flex-col gap-4"
+			p="x-4 y-4"
+			m="t-4 r-10"
+		>
+			{#each dates as { lhs, seven_lines, created_at }, i}
+				<DateCard {page} {created_at} {dates_length} order={i}>
+					<p class="text-base text-right">
+						{lhs ? lhs : 0} Biến Guru Rinpoche - Tán 7 dòng: {seven_lines
+							? seven_lines
+							: 0} Lần
+					</p></DateCard
+				>
+			{/each}
+		</div>
+		<!-- <StatisticLineGraph
+			{bulletLegendItems}
+			{DataRecord}
+			{axisY}
+			{lineGraphDates}
+		/> -->
+		<!-- TODO: Fix the graph -->
 	</StatisticPage>
 
 	<OpenFormButton bind:visible additionalClasses="bg-green-600" />
 
 	<!-- Start of the form -->
 	{#if visible}
-		<SubmitForm bind:visible buttonColor="green-600" {form}>
+		<SubmitForm
+			bind:visible
+			buttonColor="green-600"
+			{form}
+			grid="cols-[1fr_1fr] rows-4"
+		>
 			<div class="col-start-1 row-start-1">
 				<h4>Guru Rinpoche (Biến)</h4>
 				<input type="number" name="lhs" class="py-2 px-4 mt-2 rounded-md" />

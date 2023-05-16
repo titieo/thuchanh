@@ -4,7 +4,7 @@
 
 <div
 	class="grid gap-4 h-screen w-screen"
-	grid="cols-[max-content_1fr] rows-[1.5fr_2fr]"
+	grid="cols-[max-content_1fr] rows-[40vh_60vh]"
 >
 	<picture
 		class={reverse
@@ -15,11 +15,6 @@
 		<source media="(min-width:465px)" srcset={pictureName} />
 		<img src={pictureName} alt="Flowers" style="width:auto;" class="h-screen" />
 	</picture>
-	<div
-		class="scrollbar scrollbar-rounded overflow-y-scroll max-h-[20rem] flex flex-col gap-4"
-		p="x-4 y-4"
-		m="t-4 r-10"
-	>
-		<slot />
-	</div>
+
+	<slot />
 </div>

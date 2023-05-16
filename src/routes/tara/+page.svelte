@@ -3,21 +3,34 @@
 	import { presetUno } from 'unocss';
 	import { createForm } from 'felte';
 	import { DateInput } from 'date-picker-svelte';
+	import dayjs from 'dayjs';
+	// TODO: Check back on this (uninstall?)
+	// import Line from 'svelte-chartjs/Line.svelte';
 
+	import StatisticLineGraph from '$lib/StatisticLineGraph.svelte';
 	import StatisticPage from '$lib/StatisticPage.svelte';
 	import DateCard from '$lib/DateCard.svelte';
 	import { supabase } from '$lib/supabaseClient';
 	import OpenFormButton from '$lib/OpenFormButton.svelte';
 	import SubmitForm from '$lib/SubmitForm.svelte';
-	import dayjs from 'dayjs';
 
-	// import { fade } from 'svelte/transition';
+	// Query Data from Supabase
 	let visible = false;
-
 	let page = 0;
 	let size = 10;
 	let created_at = new Date();
 	// let dates = [];
+	export let data;
+
+	let { dates } = data;
+	$: ({ dates } = data);
+	dates.sort((a, b) => a.id - b.id); // b - a for reverse sort
+	console.log(dates);
+	let dates_length = dates.length;
+	// const { form } = createForm();
+	// $: dates = [...dates, ...allDates.splice(size * page, size * (page + 1) - 1)];
+
+	// FORMS
 	const { form } = createForm({
 		onSubmit: async (values, { reset }) => {
 			/* call to an api */
@@ -28,6 +41,7 @@
 					taras_homage: values.taras_homage,
 					hang_phuc: values.hang_phuc,
 					created_at: created_date,
+					lay_dai: values.lay_dai,
 				},
 			]);
 
@@ -47,82 +61,115 @@
 		},
 	});
 
-	export let data;
+	let lineGraphDates = dates.slice(-10);
+	// console.log(lineGraphDates);
+	let DataRecord = [];
+	lineGraphDates.forEach((e, i) => {
+		DataRecord.push({
+			x: i,
+			y: e.tara,
+			y1: e.taras_homage,
+			y2: e.lay_dai / 3,
+			y3: e.hang_phuc,
+		});
+	});
+	// const x = (DataRecord) => DataRecord.x;
+	const axisY = [
+		(DataRecord) => DataRecord.y,
+		(DataRecord) => DataRecord.y1,
+		(DataRecord) => DataRecord.y2,
+		(DataRecord) => DataRecord.y3,
+	];
 
-	let { dates } = data;
-	$: ({ dates } = data);
-	dates.sort((a, b) => a.id - b.id); // b - a for reverse sort
-	console.log(dates);
-	let dates_length = dates.length;
-	// const { form } = createForm();
-	// $: dates = [...dates, ...allDates.splice(size * page, size * (page + 1) - 1)];
+	const bulletLegendItems = [
+		'Green Tara',
+		'21 Tara Homages',
+		'Lạy dài (x3)',
+		'Hàng Phục',
+	].map((label) => ({ name: label }));
+	// console.log(DataRecord);
 </script>
 
 <!-- TODO: https://unocss.dev/presets/wind#breakpoints - Add breakpoints -->
 
 <main style="height: 100vh" class="h-screen overflow-y-hidden">
 	<StatisticPage pictureName="0.green_tara.png">
-		{#each dates as { tara, taras_homage, created_at, hang_phuc, tam }, i}
-			<!-- {#each dates as { tara, taras_homage, created_at, lay_dai, lhs, hang_phuc, tam, qt_chu_tara }, i} -->
-			<DateCard {page} {created_at} {dates_length} order={i}>
-				<p class="text-base text-right">
-					{tara ? tara * 108 : 0} Biến Green Tara ({hang_phuc ? hang_phuc : 0} Phút
-					Kiết Già Hàng Phục) - Tán thán 21 Tara: {taras_homage
-						? taras_homage
-						: 0}
-					Lần <br />
-					Quán tưởng TAM: {tam ? tam : 0} Phút
+		<div
+			class="scrollbar scrollbar-rounded overflow-y-scroll max-h-[20rem] flex flex-col gap-4"
+			p="x-4 y-4"
+			m="t-4 r-10"
+		>
+			{#each dates as { tara, taras_homage, created_at, hang_phuc, lay_dai, tam }, i}
+				<!-- {#each dates as { tara, taras_homage, created_at, lay_dai, lhs, hang_phuc, tam, qt_chu_tara }, i} -->
+				<DateCard {page} {created_at} {dates_length} order={i}>
+					<p class="text-base text-right">
+						{tara * 108} Biến Green Tara ({hang_phuc}
+						Phút Kiết Già Hàng Phục) <br />
+						Tán thán 21 Tara: {taras_homage} Lần ({lay_dai} Lạy Dài) <br />
+						<!-- Quán tưởng TAM: {tam ? tam : 0} Phút -->
 
-					<!-- <li>Lạy dài: {lay_dai ? lay_dai : 0} Lần</li>
+						<!-- <li>Lạy dài: {lay_dai ? lay_dai : 0} Lần</li>
                         <li>Liên Hoa Sinh: {lhs ? lhs * 108 : 0} Biến</li>
                         <li>Kiết già hàng phục: {hang_phuc ? hang_phuc : 0} Phút</li>
                         <li>Quán chủng tự TAM: {tam ? tam : 0} Phút</li>
                         -->
-				</p></DateCard
-			>
-		{/each}
+					</p></DateCard
+				>
+			{/each}
+		</div>
 
-		<!-- Button to open the form -->
-		<OpenFormButton bind:visible additionalClasses="bg-green-600" />
-
-		<!-- Start of the form -->
-		{#if visible}
-			<SubmitForm bind:visible buttonColor="green-600" {form}>
-				<div class="col-start-1 row-start-1">
-					<h4>Green Tara (Chuỗi)</h4>
-					<input type="number" name="tara" class="py-2 px-4 mt-2 rounded-md" />
-				</div>
-				<div class="col-start-1 row-start-2">
-					<h4>Tán thán 21 đức Tara (Biến)</h4>
-					<input
-						type="number"
-						name="taras_homage"
-						class="py-2 px-4 mt-2 rounded-md"
-					/>
-				</div>
-				<div class="col-start-1 row-start-3">
-					<h4>Thời gian ngồi Kiết Già Hàng Phục (Phút)</h4>
-					<input
-						type="number"
-						name="hang_phuc"
-						class="py-2 px-4 mt-2 rounded-md"
-					/>
-				</div>
-				<div class="date-wrapper">
-					<h4>Ngày</h4>
-					<DateInput
-						bind:value={created_at}
-						format="dd/MM/yyyy"
-						visible={true}
-						closeOnSelection={false}
-						placeholder="dd/MM/yyyy"
-						required
-						class="py-2 px-4 mt-2 rounded-md"
-					/>
-				</div>
-			</SubmitForm>
-		{/if}
+		<!-- <StatisticLineGraph
+			{bulletLegendItems}
+			{DataRecord}
+			{axisY}
+			{lineGraphDates}
+		/> -->
+		<!-- TODO: Fix the graph -->
 	</StatisticPage>
+	<!-- Button to open the form -->
+	<OpenFormButton bind:visible additionalClasses="bg-green-600" />
+
+	<!-- Start of the form -->
+	{#if visible}
+		<SubmitForm bind:visible buttonColor="green-600" {form}>
+			<div class="col-start-1 row-start-1">
+				<h4>Green Tara (Chuỗi)</h4>
+				<input type="number" name="tara" class="py-2 px-4 mt-2 rounded-md" />
+			</div>
+			<div class="col-start-1 row-start-2">
+				<h4>Tán thán 21 đức Tara (Biến)</h4>
+				<input
+					type="number"
+					name="taras_homage"
+					class="py-2 px-4 mt-2 rounded-md"
+				/>
+			</div>
+			<div class="col-start-1 row-start-3">
+				<h4>Thời gian ngồi Kiết Già Hàng Phục (Phút)</h4>
+				<input
+					type="number"
+					name="hang_phuc"
+					class="py-2 px-4 mt-2 rounded-md"
+				/>
+			</div>
+			<div class="col-start-1 row-start-4">
+				<h4>Số Lạy Dài</h4>
+				<input type="number" name="lay_dai" class="py-2 px-4 mt-2 rounded-md" />
+			</div>
+			<div class="date-wrapper col-start-2">
+				<h4>Ngày</h4>
+				<DateInput
+					bind:value={created_at}
+					format="dd/MM/yyyy"
+					visible={true}
+					closeOnSelection={false}
+					placeholder="dd/MM/yyyy"
+					required
+					class="py-2 px-4 mt-2 rounded-md"
+				/>
+			</div>
+		</SubmitForm>
+	{/if}
 </main>
 
 <style>

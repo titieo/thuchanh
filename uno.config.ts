@@ -9,6 +9,7 @@ import {
 import { presetScrollbar } from 'unocss-preset-scrollbar';
 
 export default defineConfig({
+	safelist: 'group-hover:border-[25px]'.split(' '),
 	presets: [
 		presetUno(),
 		presetAttributify(),
