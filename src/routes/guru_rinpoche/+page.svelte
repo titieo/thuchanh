@@ -9,8 +9,7 @@
 	import StatisticPage from '$lib/StatisticPage.svelte';
 	import DateCard from '$lib/DateCard.svelte';
 	import { supabase } from '$lib/supabaseClient';
-	import OpenMenuButton from '$lib/OpenMenuButton.svelte';
-	import Menu from '$lib/Menu.svelte';
+	import OpenMenu from '$lib/OpenMenu.svelte';
 	// import OpenFormButton from '$lib/OpenFormButton.svelte';
 	import SubmitForm from '$lib/SubmitForm.svelte';
 	import StatisticLineGraph from '$lib/StatisticLineGraph.svelte';
@@ -112,7 +111,7 @@
 </main>
 <!-- <OpenFormButton bind:visible additionalClasses="bg-green-600" /> -->
 <OpenMenuButton bind:menuVisible />
-<Menu {menuVisible} bind:visible />
+<OpenMenu bind:menuVisible bind:visible />
 <!-- Start of the form -->
 {#if visible}
 	<SubmitForm

@@ -1,5 +1,6 @@
 <script>
 	import { fade } from 'svelte/transition';
+	import 'virtual:uno.css';
 	export let data;
 </script>
 

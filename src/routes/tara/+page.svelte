@@ -1,5 +1,4 @@
 <script>
-	import 'virtual:uno.css';
 	import { presetUno } from 'unocss';
 	import { createForm } from 'felte';
 	import { DateInput } from 'date-picker-svelte';
@@ -8,14 +7,14 @@
 	// TODO: Check back on this (uninstall?)
 	// import Line from 'svelte-chartjs/Line.svelte';
 
-	import Menu from '$lib/Menu.svelte';
+	// import Menu from '$lib/Menu.svelte';
 	import StatisticLineGraph from '$lib/StatisticLineGraph.svelte';
 	import StatisticPage from '$lib/StatisticPage.svelte';
 	import DateCard from '$lib/DateCard.svelte';
 	import { supabase } from '$lib/supabaseClient';
 	import OpenFormButton from '$lib/OpenFormButton.svelte';
 	import SubmitForm from '$lib/SubmitForm.svelte';
-	import OpenMenuButton from '$lib/OpenMenuButton.svelte';
+	import OpenMenu from '$lib/OpenMenu.svelte';
 
 	// Query Data from Supabase
 	let visible = false;
@@ -132,8 +131,8 @@
 	</StatisticPage>
 	<!-- Button to open the form -->
 	<!-- <OpenFormButton bind:visible additionalClasses="bg-green-600" /> -->
-	<OpenMenuButton bind:menuVisible />
-	<Menu bind:menuVisible bind:visible />
+	<OpenMenu bind:menuVisible bind:visible />
+	<!-- <Menu bind:menuVisible bind:visible /> -->
 
 	<!-- Start of the form -->
 	{#if visible}
