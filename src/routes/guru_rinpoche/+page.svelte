@@ -25,7 +25,7 @@
 		onSubmit: async (values, { reset }) => {
 			/* call to an api */
 			const created_date = dayjs(created_at).format('DD/MM/YYYY');
-			const { data, error } = await supabase.from('lhs').insert([
+			const { data, error } = await supabase.from('main').insert([
 				{
 					lhs: values.lhs,
 					seven_lines: values.seven_lines,

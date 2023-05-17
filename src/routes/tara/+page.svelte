@@ -38,7 +38,7 @@
 		onSubmit: async (values, { reset }) => {
 			/* call to an api */
 			const created_date = dayjs(created_at).format('DD/MM/YYYY');
-			const { data, error } = await supabase.from('tara').insert([
+			const { data, error } = await supabase.from('main').insert([
 				{
 					tara: values.tara,
 					taras_homage: values.taras_homage,
