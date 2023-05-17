@@ -7,6 +7,7 @@ import {
 	presetWebFonts,
 } from 'unocss';
 import { presetScrollbar } from 'unocss-preset-scrollbar';
+import transformerVariantGroup from '@unocss/transformer-variant-group';
 
 export default defineConfig({
 	safelist: 'group-hover:border-[25px]'.split(' '),
@@ -35,4 +36,5 @@ export default defineConfig({
 	shortcuts: {
 		'flex-center': 'flex justify-center items-center',
 	},
+	transformers: [transformerVariantGroup()],
 });

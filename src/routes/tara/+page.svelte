@@ -98,14 +98,14 @@
 <main style="height: 100vh" class="h-screen overflow-y-hidden">
 	<StatisticPage pictureName="0.green_tara.png">
 		<div
-			class="scrollbar scrollbar-rounded overflow-y-scroll max-h-[20rem] flex flex-col gap-4"
+			class="scrollbar scrollbar-rounded overflow-y-scroll max-h-[90vh] flex flex-col gap-4"
 			p="x-4 y-4"
 			m="t-4 r-10"
 		>
 			{#each dates as { tara, taras_homage, created_at, hang_phuc, lay_dai, tam }, i}
 				<!-- {#each dates as { tara, taras_homage, created_at, lay_dai, lhs, hang_phuc, tam, qt_chu_tara }, i} -->
 				<DateCard {page} {created_at} {dates_length} order={i}>
-					<p class="text-base text-right">
+					<p class="text-xs lg:text-base text-right">
 						{tara * 108} Biến Green Tara ({hang_phuc}
 						Phút Kiết Già Hàng Phục) <br />
 						Tán thán 21 Tara: {taras_homage} Lần ({lay_dai} Lạy Dài) <br />

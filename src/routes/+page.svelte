@@ -36,19 +36,21 @@
 <!-- <Fullpage> -->
 <main
 	style="background-color: #fdd9aa"
-	class="grid h-screen w-screen overflow-y-hidden grid-cols-[2fr_1fr] grid-rows-[30vh_70vh] font-title"
+	class="grid h-screen w-screen overflow-y-hidden sm:grid-cols-[70vw_30vw] lg:grid-cols-[2fr_1fr] grid-rows-[30vh_70vh] font-title"
 >
 	<!-- style="background-image: linear-gradient(to bottom right,#fdd9aa,#f1c89b)" -->
-	<div class="text-center prose flex-center justify-self-center">
+	<div class="text-center prose z-1 flex-center justify-self-center">
 		<h1>KẾT QUẢ THỰC HÀNH</h1>
 	</div>
-	<div class="place-self-center flex text-xl gap-2">
+	<div
+		class="place-self-center z-1 flex lt-sm:text-xl text-lg lg:text-xl gap-2"
+	>
 		<a
 			href="{base}/tara"
 			class="flex flex-col items-center no-underline text-black font-bold"
 		>
 			<img
-				class="w-30 h-30 rounded-lg hover:rounded-3xl duration-200 transition-all ease-in-out"
+				class="w-24 h-24 lg:(w-30 h-30) rounded-lg hover:rounded-3xl duration-200 transition-all ease-in-out"
 				src="tam.png"
 				style="object-fit: cover;object-position: 50% 50%;;image-resolution: from-image;"
 				alt=""
@@ -60,7 +62,7 @@
 			class="flex flex-col items-center no-underline text-black font-bold"
 		>
 			<img
-				class="w-30 h-30 rounded-lg hover:rounded-3xl duration-200 transition-all ease-in-out"
+				class="w-24 h-24 lg:(w-30 h-30) rounded-lg hover:rounded-3xl duration-200 transition-all ease-in-out"
 				src="hung.jpg"
 				style="object-fit: cover;object-position: top;"
 				alt=""
@@ -78,7 +80,7 @@
 				width="24"
 				height="24"
 				viewBox="0 0 24 24"
-				class="w-30 h-30"
+				class="w-24 h-24 lg:(w-30 h-30) lg:(w-30 h-30)"
 				><path
 					fill="currentColor"
 					d="M3 8V3h19v5H3Zm5 2v11H3V10h5Zm14 11h-5V10h5v11Zm-7-11v11h-5V10h5Z"
@@ -86,7 +88,9 @@
 			>Table</a
 		>
 	</div>
-	<picture class="justify-self-end self-end col-start-2 row-start-1 row-span-2">
+	<picture
+		class="justify-self-end self-end col-start-1 lt-sm:(blur absolute top-0 left-0) sm:(col-start-2 row-start-1 row-span-2)"
+	>
 		<source media="(min-width:650px)" srcset="main.webp" />
 		<source media="(min-width:465px)" srcset="main.webp" />
 		<img src="main.webp" alt="Flowers" style="width:auto;" class="h-screen" />

@@ -9,11 +9,11 @@
 </script>
 
 <div
-	class="card max-h-[20rem] w-full group flex gap-4 items-center justify-between"
+	class="card w-full group flex gap-4 items-center justify-between"
 	style="order:{dates_length - order}"
 >
 	<!-- style="order:{dates.length - order}" -->
-	<h3 class="text-lg font-title">
+	<h3 class="text-base md:text-lg font-title">
 		<!-- {startDate.add(order, 'd').format('DD/MM/YYYY')}? -->
 		{created_at}
 		<!-- {dayjs().format('DD/MM/YYYY')} -->

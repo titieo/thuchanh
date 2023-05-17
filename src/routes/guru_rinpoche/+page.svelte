@@ -92,7 +92,7 @@
 		>
 			{#each dates as { lhs, seven_lines, created_at }, i}
 				<DateCard {page} {created_at} {dates_length} order={i}>
-					<p class="text-base text-right">
+					<p class="text-xs lg:text-base text-right">
 						{lhs ? lhs : 0} Biến Guru Rinpoche - Tán 7 dòng: {seven_lines
 							? seven_lines
 							: 0} Lần

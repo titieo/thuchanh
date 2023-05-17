@@ -66,7 +66,7 @@
 <div class="absolute bottom-1 right-2 py-3 sm:max-w-xl mx-auto">
 	<nav>
 		<button
-			class="rounded-full text-gray-500 w-14 h-14 relative focus:outline-none bg-white cursor-pointer"
+			class="rounded-full text-gray-500 w-10 h-10 md:w-14 md:h-14 relative focus:outline-none bg-white cursor-pointer"
 			on:click={() => (menuVisible = !menuVisible)}
 		>
 			<span class="sr-only">Open main</span>
