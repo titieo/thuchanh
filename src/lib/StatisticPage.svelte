@@ -7,9 +7,9 @@
 	grid="cols-[max-content_1fr] rows-[40vh_60vh]"
 >
 	<picture
-		class={reverse
-			? 'order-1 justify-self-end max-w-max row-start-1 row-end-2'
-			: 'max-w-max row-start-1 row-end-2'}
+		class="max-w-max row-start-1 row-end-2 {reverse
+			? 'order-1 justify-self-end '
+			: ''}"
 	>
 		<source media="(min-width:650px)" srcset={pictureName} />
 		<source media="(min-width:465px)" srcset={pictureName} />

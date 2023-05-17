@@ -83,7 +83,9 @@
 					{...$tableAttrs}
 					class="rounded-md min-w-full text-left text-sm font-light"
 				>
-					<thead class="border-b font-medium text-lg dark:border-neutral-500">
+					<thead
+						class="border-b font-medium font-title text-lg dark:border-neutral-500"
+					>
 						{#each $headerRows as headerRow (headerRow.id)}
 							<Subscribe rowAttrs={headerRow.attrs()} let:rowAttrs>
 								<tr {...rowAttrs}>

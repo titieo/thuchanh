@@ -5,7 +5,7 @@
 </script>
 
 {#key data.pathname}
-	<div transition:fade class="max-h-screen">
+	<div transition:fade class="max-h-screen font-content">
 		<slot />
 	</div>
 {/key}

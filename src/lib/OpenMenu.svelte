@@ -24,6 +24,7 @@
 				/></svg
 			>Open Form</button
 		>
+
 		<a
 			href="{base}/"
 			class="text-sm py-2 px-4 cursor-pointer rounded-md flex items-center border-none gap-2 hover:border-gray text-dark-600 bg-white decoration-none hover:border-gray-900 hover:shadow transition-all ease-in"
@@ -35,10 +36,34 @@
 				><path fill="currentColor" d="M4 21V9l8-6l8 6v12h-6v-7h-4v7H4Z" /></svg
 			>Home</a
 		>
+		<a
+			href="{base}/table"
+			class="text-sm py-2 px-4 cursor-pointer rounded-md flex items-center border-none gap-2 hover:border-gray text-dark-600 bg-white decoration-none hover:border-gray-900 hover:shadow transition-all ease-in"
+			><svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="16"
+				height="16"
+				viewBox="0 0 24 24"
+				><path
+					fill="currentColor"
+					d="M3 8V3h19v5H3Zm5 2v11H3V10h5Zm14 11h-5V10h5v11Zm-7-11v11h-5V10h5Z"
+				/></svg
+			>Table</a
+		>
+		<a
+			href="{base}/tara"
+			class="text-sm py-2 px-4 cursor-pointer rounded-md flex items-center border-none gap-2 hover:border-gray text-dark-600 bg-white decoration-none hover:border-gray-900 hover:shadow transition-all ease-in"
+			>Green Tara</a
+		>
+		<a
+			href="{base}/guru_rinpoche"
+			class="text-sm py-2 px-4 cursor-pointer rounded-md flex items-center border-none gap-2 hover:border-gray text-dark-600 bg-white decoration-none hover:border-gray-900 hover:shadow transition-all ease-in"
+			>Guru Rinpoche</a
+		>
 	</nav>
 {/if}
 
-<div class="absolute bottom-2 right-2 py-3 sm:max-w-xl mx-auto">
+<div class="absolute bottom-1 right-2 py-3 sm:max-w-xl mx-auto">
 	<nav>
 		<button
 			class="rounded-full text-gray-500 w-14 h-14 relative focus:outline-none bg-white cursor-pointer"

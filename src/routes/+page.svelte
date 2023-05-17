@@ -36,7 +36,7 @@
 <!-- <Fullpage> -->
 <main
 	style="background-color: #fdd9aa"
-	class="grid h-screen w-screen overflow-y-hidden grid-cols-[2fr_1fr] grid-rows-[60vh_40vh]"
+	class="grid h-screen w-screen overflow-y-hidden grid-cols-[2fr_1fr] grid-rows-[60vh_40vh] font-title"
 >
 	<!-- style="background-image: linear-gradient(to bottom right,#fdd9aa,#f1c89b)" -->
 	<div class="place-self-center flex text-xl gap-2">
@@ -63,6 +63,24 @@
 				alt=""
 			/>
 			Guru Rinpoche</a
+		>
+		<a
+			href="{base}/table"
+			class="flex flex-col items-center no-underline text-black font-bold"
+		>
+			<!-- class="text-sm py-2 px-4 cursor-pointer rounded-md flex items-center border-none gap-2 hover:border-gray text-dark-600 bg-white decoration-none hover:border-gray-900 hover:shadow transition-all ease-in" -->
+
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				class="w-30 h-30"
+				><path
+					fill="currentColor"
+					d="M3 8V3h19v5H3Zm5 2v11H3V10h5Zm14 11h-5V10h5v11Zm-7-11v11h-5V10h5Z"
+				/></svg
+			>Table</a
 		>
 	</div>
 	<picture class="justify-self-end self-end col-start-2 row-start-1 row-span-2">

@@ -24,8 +24,8 @@ export default defineConfig({
             */
 			provider: 'google',
 			fonts: {
-				sans: 'Roboto',
-				mono: ['Fira Code', 'Fira Mono:400,700'],
+				title: 'Work Sans',
+				content: 'Merriweather',
 				// TODO: https://unocss.dev/presets/web-fonts
 			},
 		}),

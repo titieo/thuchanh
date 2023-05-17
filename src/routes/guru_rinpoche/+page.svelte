@@ -109,8 +109,6 @@
 		<!-- TODO: Fix the graph -->
 	</StatisticPage>
 </main>
-<!-- <OpenFormButton bind:visible additionalClasses="bg-green-600" /> -->
-<OpenMenuButton bind:menuVisible />
 <OpenMenu bind:menuVisible bind:visible />
 <!-- Start of the form -->
 {#if visible}
