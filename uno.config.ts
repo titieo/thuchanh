@@ -32,4 +32,7 @@ export default defineConfig({
 		presetTypography(),
 		presetScrollbar(),
 	],
+	shortcuts: {
+		'flex-center': 'flex justify-center items-center',
+	},
 });

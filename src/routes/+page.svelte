@@ -36,9 +36,12 @@
 <!-- <Fullpage> -->
 <main
 	style="background-color: #fdd9aa"
-	class="grid h-screen w-screen overflow-y-hidden grid-cols-[2fr_1fr] grid-rows-[60vh_40vh] font-title"
+	class="grid h-screen w-screen overflow-y-hidden grid-cols-[2fr_1fr] grid-rows-[30vh_70vh] font-title"
 >
 	<!-- style="background-image: linear-gradient(to bottom right,#fdd9aa,#f1c89b)" -->
+	<div class="text-center prose flex-center justify-self-center">
+		<h1>KẾT QUẢ THỰC HÀNH</h1>
+	</div>
 	<div class="place-self-center flex text-xl gap-2">
 		<a
 			href="{base}/tara"

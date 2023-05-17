@@ -12,7 +12,7 @@
 	>
 		<button
 			on:click={() => ((visible = !visible), (menuVisible = false))}
-			class="text-sm py-2 px-4 cursor-pointer rounded-md flex justify-center items-center border-none gap-2 hover:border-gray bg-white hover:border-gray-900 hover:shadow transition-all ease-in"
+			class="text-sm py-2 px-4 cursor-pointer rounded-md flex-center border-none gap-2 hover:border-gray bg-white hover:border-gray-900 hover:shadow transition-all ease-in"
 			><svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="16"
