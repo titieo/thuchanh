@@ -36,27 +36,44 @@
 	// FORMS
 	const { form } = createForm({
 		onSubmit: async (values, { reset }) => {
-			/* call to an api */
+			/* call to an api dates_length */
 			const created_date = dayjs(created_at).format('DD/MM/YYYY');
-			const { data, error } = await supabase.from('main').insert([
-				{
-					tara: values.tara,
-					taras_homage: values.taras_homage,
-					hang_phuc: values.hang_phuc,
-					created_at: created_date,
-					lay_dai: values.lay_dai,
-				},
-			]);
+			if (values.created_at == dates[dates_length - 1].created_at) {
+				let lastDate = dates[dates_length - 1];
+				await supabase
+					.from('main')
+					.update({
+						tara: values.tara + lastDate.tara,
+						taras_homage: values.taras_homage + lastDate.taras_homage,
+						hang_phuc: values.hang_phuc + lastDate.hang_phuc,
+						lay_dai: values.lay_dai + lastDate.lay_dai,
+					})
+					.eq('created_at', values.created_at);
+				lastDate.tara += values.tara;
+				lastDate.taras_homage += values.taras_homage;
+				lastDate.hang_phuc += values.hang_phuc;
+				lastDate.lay_dai += values.lay_dai;
+			} else {
+				await supabase.from('main').insert([
+					{
+						tara: values.tara,
+						taras_homage: values.taras_homage,
+						hang_phuc: values.hang_phuc,
+						created_at: created_date,
+						lay_dai: values.lay_dai,
+					},
+				]);
 
-			dates = [
-				...dates,
-				{
-					tara: values.tara,
-					taras_homage: values.taras_homage,
-					hang_phuc: values.hang_phuc,
-					created_at: created_date,
-				},
-			];
+				dates = [
+					...dates,
+					{
+						tara: values.tara,
+						taras_homage: values.taras_homage,
+						hang_phuc: values.hang_phuc,
+						created_at: created_date,
+					},
+				];
+			}
 
 			console.log(values);
 			reset();

@@ -21,27 +21,41 @@
 
 	let created_at = new Date();
 	// let dates = [];
+
 	const { form } = createForm({
 		onSubmit: async (values, { reset }) => {
 			/* call to an api */
 			const created_date = dayjs(created_at).format('DD/MM/YYYY');
-			const { data, error } = await supabase.from('main').insert([
-				{
-					lhs: values.lhs,
-					seven_lines: values.seven_lines,
-					created_at: created_date,
-				},
-			]);
 
-			dates = [
-				...dates,
-				{
-					lhs: values.lhs,
-					seven_lines: values.seven_lines,
-					created_at: created_date,
-				},
-			];
-
+			if (values.created_at == dates[dates_length - 1].created_at) {
+				let lastDate = dates[dates_length - 1];
+				await supabase
+					.from('main')
+					.update({
+						lhs: values.lhs + lastDate.lhs,
+						seven_lines: values.seven_lines + lastDate.seven_lines,
+					})
+					.eq('created_at', values.created_at);
+				lastDate.lhs += values.lhs;
+				lastDate.seven_lines += values.seven_lines;
+			} else {
+				await supabase.from('main').insert([
+					{
+						lhs: values.lhs,
+						seven_lines: values.seven_lines,
+						created_at: created_date,
+					},
+				]);
+				dates = [
+					...dates,
+					{
+						tara: values.tara,
+						taras_homage: values.taras_homage,
+						hang_phuc: values.hang_phuc,
+						created_at: created_date,
+					},
+				];
+			}
 			console.log(values);
 			reset();
 			visible = false;
