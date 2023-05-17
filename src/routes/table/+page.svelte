@@ -7,8 +7,16 @@
 	let { dates } = data;
 	$: ({ dates } = data);
 	dates.sort((a, b) => a.id - b.id);
-
-	const tableData = readable(dates);
+	const inputDates = dates.map((ele) => ({
+		created_at: ele.created_at,
+		tara: ele.tara,
+		taras_homage: ele.taras_homage,
+		lay_dai: ele.lay_dai,
+		hang_phuc: ele.hang_phuc,
+		lhs: ele.lhs === null ? '' : ele.lhs,
+		seven_lines: ele.seven_lines === null ? '' : ele.seven_lines,
+	}));
+	const tableData = readable(inputDates);
 
 	const table = createTable(tableData);
 	const headerLabel = [
