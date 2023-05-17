@@ -43,7 +43,7 @@
 		<h1>KẾT QUẢ THỰC HÀNH</h1>
 	</div>
 	<div
-		class="place-self-center z-1 flex lt-sm:text-xl text-lg lg:text-xl gap-2"
+		class="place-self-center z-1 flex lt-sm:text-xl text-lg lg:text-xl gap-4"
 	>
 		<a
 			href="{base}/tara"
@@ -64,7 +64,7 @@
 			<img
 				class="w-24 h-24 lg:(w-30 h-30) rounded-lg hover:rounded-3xl duration-200 transition-all ease-in-out"
 				src="hung.jpg"
-				style="object-fit: cover;object-position: top;"
+				style="object-fit: cover;object-position: center;"
 				alt=""
 			/>
 			Guru Rinpoche</a
@@ -80,7 +80,7 @@
 				width="24"
 				height="24"
 				viewBox="0 0 24 24"
-				class="w-24 h-24 lg:(w-30 h-30) lg:(w-30 h-30)"
+				class="w-22 h-22 p-2 lg:(w-30 h-30) lg:(w-30 h-30) rounded-lg hover:rounded-3xl duration-200 transition-all ease-in-out bg-white"
 				><path
 					fill="currentColor"
 					d="M3 8V3h19v5H3Zm5 2v11H3V10h5Zm14 11h-5V10h5v11Zm-7-11v11h-5V10h5Z"
