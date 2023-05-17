@@ -111,7 +111,9 @@
 </script>
 
 <!-- TODO: https://unocss.dev/presets/wind#breakpoints - Add breakpoints -->
-
+<svelte:head>
+	<title>Green Tara</title>
+</svelte:head>
 <main style="height: 100vh" class="h-screen overflow-y-hidden">
 	<StatisticPage pictureName="0.green_tara.png">
 		<div

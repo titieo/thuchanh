@@ -92,7 +92,7 @@
 </script>
 
 <svelte:head>
-	<title>Tu tập</title>
+	<title>Guru Rinpoche</title>
 </svelte:head>
 
 <!-- TODO: https://unocss.dev/presets/wind#breakpoints - Add breakpoints -->

@@ -79,6 +79,10 @@
 		table.createViewModel(columns);
 </script>
 
+<svelte:head>
+	<title>Table</title>
+</svelte:head>
+
 <div
 	class="flex flex-col scrollbar scrollbar-rounded scrollbar-w-2px scrollbar-h-4px"
 >

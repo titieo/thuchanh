@@ -7,28 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>Tu tập</title>
-	<link
-		rel="apple-touch-icon"
-		sizes="180x180"
-		href="{base}/apple-touch-icon.png"
-	/>
-	<link
-		rel="icon"
-		type="image/png"
-		sizes="32x32"
-		href="{base}/favicon-32x32.png"
-	/>
-	<link
-		rel="icon"
-		type="image/png"
-		sizes="16x16"
-		href="{base}/favicon-16x16.png"
-	/>
-	<link rel="manifest" href="{base}/site.webmanifest" />
-	<link rel="mask-icon" href="{base}/safari-pinned-tab.svg" color="#5bbad5" />
-	<meta name="msapplication-TileColor" content="#da532c" />
-	<meta name="theme-color" content="#ffffff" />
+	<title>Thực Hành</title>
 </svelte:head>
 
 <!-- TODO: https://unocss.dev/presets/wind#breakpoints - Add breakpoints -->
@@ -51,7 +30,7 @@
 		>
 			<img
 				class="w-24 h-24 lg:(w-30 h-30) rounded-lg hover:rounded-3xl duration-200 transition-all ease-in-out"
-				src="tam.png"
+				src="{base}/tam.png"
 				style="object-fit: cover;object-position: 50% 50%;;image-resolution: from-image;"
 				alt=""
 			/>
@@ -63,7 +42,7 @@
 		>
 			<img
 				class="w-24 h-24 lg:(w-30 h-30) rounded-lg hover:rounded-3xl duration-200 transition-all ease-in-out"
-				src="hung.jpg"
+				src="{base}/hung.jpg"
 				style="object-fit: cover;object-position: center;"
 				alt=""
 			/>
@@ -91,9 +70,14 @@
 	<picture
 		class="justify-self-end self-end col-start-1 lt-sm:(blur absolute top-0 left-0) sm:(col-start-2 row-start-1 row-span-2)"
 	>
-		<source media="(min-width:650px)" srcset="main.webp" />
-		<source media="(min-width:465px)" srcset="main.webp" />
-		<img src="main.webp" alt="Flowers" style="width:auto;" class="h-screen" />
+		<source media="(min-width:650px)" srcset="{base}/main.webp" />
+		<source media="(min-width:465px)" srcset="{base}/main.webp" />
+		<img
+			src="{base}/main.webp"
+			alt="Flowers"
+			style="width:auto;"
+			class="h-screen"
+		/>
 	</picture>
 </main>
 
