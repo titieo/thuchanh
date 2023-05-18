@@ -1,0 +1,3 @@
+import{ac as x,ad as u}from"./index.6eda8e66.js";function C(t){return t<.5?4*t*t*t:.5*Math.pow(2*t-2,3)+1}function _(t){const n=t-1;return n*n*n+1}function O(t,{delay:n=0,duration:o=400,easing:c=x}={}){const s=+getComputedStyle(t).opacity;return{delay:n,duration:o,easing:c,css:a=>`opacity: ${a*s}`}}function S(t,{delay:n=0,duration:o=400,easing:c=_,x:s=0,y:a=0,opacity:f=0}={}){const r=getComputedStyle(t),e=+r.opacity,y=r.transform==="none"?"":r.transform,p=e*(1-f),[l,m]=u(s),[$,d]=u(a);return{delay:n,duration:o,easing:c,css:(i,g)=>`
+			transform: ${y} translate(${(1-i)*l}${m}, ${(1-i)*$}${d});
+			opacity: ${e-p*g}`}}export{S as a,C as c,O as f};

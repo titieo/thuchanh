@@ -1,0 +1,45 @@
+import{M as fe,N as ve,S as ce,i as de,s as he,O as pe,e as ne,C as me,P as ke,h as o,D as a,K as R,o as we,Q as xe,a as y,k as h,q as V,R as oe,y as _e,c as S,l as m,m as k,r as G,T as ie,z as be,n as e,U as X,p as E,b as Y,A as ye,g as Se,d as Ae,B as Me}from"../chunks/index.6eda8e66.js";/* empty css                      */import{b as A}from"../chunks/paths.f43b5ce2.js";import{w as Ee}from"../chunks/index.ccd46d02.js";const ue={selectLabel:"text-slate-700 dark:text-slate-500",selectButton:"ring-1 ring-slate-900/10 rounded-lg shadow-sm p-2 text-slate-700  bg-white dark:bg-slate-600 dark:ring-0 dark:highlight-white/5 dark:text-slate-200",selectIcon:"text-slate-400",dropdownList:"text-slate-700 bg-white ring-1 ring-black ring-opacity-5 dark:bg-slate-700 dark:ring-0 dark:highlight-white/5 dark:text-slate-300",dropdownHover:"hover:bg-slate-50 hover:dark:bg-slate-800/50",textActive:"text-sky-500",iconActiveStroke:"stroke-sky-500",iconActiveFill:"fill-sky-500",iconActiveShade:"fill-sky-400/20",iconStroke:"stroke-slate-400",iconFill:"fill-slate-400"},$e=s=>({dark:t=>`
+<svg viewBox="0 0 24 24" fill="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+	<path
+		class="${t?s.iconActiveShade:s.iconStroke}"
+		fill-rule="evenodd"
+		clip-rule="evenodd"
+		d="M17.715 15.15A6.5 6.5 0 0 1 9 6.035C6.106 6.922 4 9.645 4 12.867c0 3.94 3.153 7.136 7.042 7.136 3.101 0 5.734-2.032 6.673-4.853Z"
+	/>
+	<path
+		class="${t?s.iconActiveFill:s.iconFill}"
+		d="m17.715 15.15.95.316a1 1 0 0 0-1.445-1.185l.495.869ZM9 6.035l.846.534a1 1 0 0 0-1.14-1.49L9 6.035Zm8.221 8.246a5.47 5.47 0 0 1-2.72.718v2a7.47 7.47 0 0 0 3.71-.98l-.99-1.738Zm-2.72.718A5.5 5.5 0 0 1 9 9.5H7a7.5 7.5 0 0 0 7.5 7.5v-2ZM9 9.5c0-1.079.31-2.082.845-2.93L8.153 5.5A7.47 7.47 0 0 0 7 9.5h2Zm-4 3.368C5 10.089 6.815 7.75 9.292 6.99L8.706 5.08C5.397 6.094 3 9.201 3 12.867h2Zm6.042 6.136C7.718 19.003 5 16.268 5 12.867H3c0 4.48 3.588 8.136 8.042 8.136v-2Zm5.725-4.17c-.81 2.433-3.074 4.17-5.725 4.17v2c3.552 0 6.553-2.327 7.622-5.537l-1.897-.632Z"
+	/>
+	<path
+		class="${t?s.iconActiveFill:s.iconFill}"
+		fill-rule="evenodd"
+		clip-rule="evenodd"
+		d="M17 3a1 1 0 0 1 1 1 2 2 0 0 0 2 2 1 1 0 1 1 0 2 2 2 0 0 0-2 2 1 1 0 1 1-2 0 2 2 0 0 0-2-2 1 1 0 1 1 0-2 2 2 0 0 0 2-2 1 1 0 0 1 1-1Z"
+	/>
+</svg>`,light:t=>`
+<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+	<path class="${t?s.iconActiveStroke+" "+s.iconActiveShade:s.iconStroke}" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+	<path
+		class=${t?s.iconActiveStroke:s.iconStroke}
+		d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836"
+	/>
+</svg>`,system:t=>`
+<svg viewBox="0 0 24 24" fill="none">
+	<path
+		class="${t?s.iconActiveStroke+" "+s.iconActiveShade:s.iconStroke}"
+		d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6Z"
+		stroke-width="2"
+		stroke-linejoin="round"
+	/>
+	<path
+		class="${t?s.iconActiveStroke:s.iconStroke}"
+		d="M14 15c0 3 2 5 2 5H8s2-2 2-5"
+		stroke-width="2"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+	/>
+</svg>`}),Te=$e(ue),ge={};function He(){return ve(ge)}function Le(s){fe(ge,s)}const Ze=["light","dark","system"],Ce={light:"Light",dark:"Dark",system:"System"};function Ie(s){const{key:t,colors:r,icons:i,labels:c}={key:"theme",colors:ue,icons:Te,labels:Ce,...s};let g="system";{const f=localStorage.theme;(f==="light"||f==="dark")&&(g=f)}const{subscribe:$,set:l}=Ee(g);function u(f){Ze.includes(f)&&f!==g&&(g=f,l(g))}const d={subscribe:$,setTheme:u,colors:r,icons:i,labels:c};return Le(d),d}const{document:ee}=xe;function je(s){let t,r;return{c(){t=new pe(!1),r=ne(),this.h()},l(i){const c=me("svelte-1cgseeh",ee.head);t=ke(c,!1),r=ne(),c.forEach(o),this.h()},h(){t.a=r},m(i,c){t.m(s[0],ee.head),a(ee.head,r)},p:R,i:R,o:R,d(i){o(r),i&&t.d()}}}function Fe(s){const t=He(),r=()=>document.documentElement.classList.toggle("dark",localStorage.theme==="dark"||!localStorage.theme&&window.matchMedia("(prefers-color-scheme: dark)").matches);function i(){t.setTheme(localStorage.theme||"system")}function c(l){switch(l){case"light":case"dark":localStorage.setItem("theme",l);break;case"system":localStorage.removeItem("theme");break}r()}return we(()=>{const l=matchMedia("(prefers-color-scheme: dark)");l.addEventListener?l.addEventListener("change",r):l.addListener(r),addEventListener("storage",i);const u=t.subscribe(c);return()=>{l.removeEventListener?l.removeEventListener("change",r):l.removeListener(r),removeEventListener("storage",i),u()}}),["<script>"+r.toString().substring(6)+"<\/script>"]}class Be extends ce{constructor(t){super(),de(this,t,Fe,je,he,{})}}Promise.resolve();function Ve(s){let t,r,i,c,g,$,l,u,d,f,U,D,x,w,te,N,P,_,v,T,Q,q,p,C,z,I,K,b,se,F,M,B;return M=new Be({}),{c(){t=y(),r=h("main"),i=h("div"),c=h("h1"),g=V("KẾT QUẢ THỰC HÀNH"),$=y(),l=h("div"),u=h("a"),d=h("img"),U=V(`
+			Green Tara`),D=y(),x=h("a"),w=h("img"),N=V(`
+			Guru Rinpoche`),P=y(),_=h("a"),v=oe("svg"),T=oe("path"),Q=V("Table"),q=y(),p=h("picture"),C=h("source"),z=y(),I=h("source"),K=y(),b=h("img"),F=y(),_e(M.$$.fragment),this.h()},l(n){me("svelte-81nrii",document.head).forEach(o),t=S(n),r=m(n,"MAIN",{style:!0,class:!0});var H=k(r);i=m(H,"DIV",{class:!0});var re=k(i);c=m(re,"H1",{});var ae=k(c);g=G(ae,"KẾT QUẢ THỰC HÀNH"),ae.forEach(o),re.forEach(o),$=S(H),l=m(H,"DIV",{class:!0});var L=k(l);u=m(L,"A",{href:!0,class:!0});var O=k(u);d=m(O,"IMG",{class:!0,src:!0,style:!0,alt:!0}),U=G(O,`
+			Green Tara`),O.forEach(o),D=S(L),x=m(L,"A",{href:!0,class:!0});var J=k(x);w=m(J,"IMG",{class:!0,src:!0,style:!0,alt:!0}),N=G(J,`
+			Guru Rinpoche`),J.forEach(o),P=S(L),_=m(L,"A",{href:!0,class:!0});var W=k(_);v=ie(W,"svg",{xmlns:!0,width:!0,height:!0,viewBox:!0,class:!0});var le=k(v);T=ie(le,"path",{fill:!0,d:!0}),k(T).forEach(o),le.forEach(o),Q=G(W,"Table"),W.forEach(o),L.forEach(o),q=S(H),p=m(H,"PICTURE",{class:!0});var Z=k(p);C=m(Z,"SOURCE",{media:!0,srcset:!0}),z=S(Z),I=m(Z,"SOURCE",{media:!0,srcset:!0}),K=S(Z),b=m(Z,"IMG",{src:!0,alt:!0,style:!0,class:!0}),Z.forEach(o),H.forEach(o),F=S(n),be(M.$$.fragment,n),this.h()},h(){document.title="Thực Hành",e(i,"class","text-center prose z-1 flex-col flex-center justify-self-center"),e(d,"class","w-20 h-20 md:w-24 md:h-24 lg:w-30 lg:h-30 rounded-lg hover:rounded-3xl duration-200 transition-all ease-in-out"),X(d.src,f=A+"/tam.png")||e(d,"src",f),E(d,"object-fit","cover"),E(d,"object-position","50% 50%"),E(d,"image-resolution","from-image"),e(d,"alt",""),e(u,"href",A+"/tara"),e(u,"class","flex flex-col items-center no-underline text-black font-bold"),e(w,"class","w-20 h-20 md:w-24 md:h-24 lg:w-30 lg:h-30 rounded-lg hover:rounded-3xl duration-200 transition-all ease-in-out"),X(w.src,te=A+"/hung.jpg")||e(w,"src",te),E(w,"object-fit","cover"),E(w,"object-position","center"),e(w,"alt",""),e(x,"href",A+"/guru_rinpoche"),e(x,"class","flex flex-col items-center no-underline text-black font-bold"),e(T,"fill","currentColor"),e(T,"d","M3 8V3h19v5H3Zm5 2v11H3V10h5Zm14 11h-5V10h5v11Zm-7-11v11h-5V10h5Z"),e(v,"xmlns","http://www.w3.org/2000/svg"),e(v,"width","24"),e(v,"height","24"),e(v,"viewBox","0 0 24 24"),e(v,"class","w-18 h-18 md:w-24 md:h-24 p-2 lg:w-30 lg:h-30 rounded-lg hover:rounded-3xl duration-200 transition-all ease-in-out bg-white"),e(_,"href",A+"/table"),e(_,"class","flex flex-col items-center no-underline text-black font-bold"),e(l,"class","place-self-center z-1 flex lt-sm:text-xl text-lg lg:text-xl gap-4"),e(C,"media","(min-width:650px)"),e(C,"srcset",A+"/main.webp"),e(I,"media","(min-width:465px)"),e(I,"srcset",A+"/main.webp"),X(b.src,se=A+"/main.webp")||e(b,"src",se),e(b,"alt","Flowers"),E(b,"width","auto"),e(b,"class","h-screen"),e(p,"class","justify-self-end self-end col-start-1 lt-sm:blur lt-sm:absolute lt-sm:top-0 lt-sm:left-0 sm:col-start-2 sm:row-start-1 sm:row-span-2"),E(r,"background-color","#fdd9aa"),e(r,"class","grid h-screen w-screen overflow-y-hidden sm:grid-cols-[70vw_30vw] lg:grid-cols-[2fr_1fr] grid-rows-[30vh_70vh] font-title")},m(n,j){Y(n,t,j),Y(n,r,j),a(r,i),a(i,c),a(c,g),a(r,$),a(r,l),a(l,u),a(u,d),a(u,U),a(l,D),a(l,x),a(x,w),a(x,N),a(l,P),a(l,_),a(_,v),a(v,T),a(_,Q),a(r,q),a(r,p),a(p,C),a(p,z),a(p,I),a(p,K),a(p,b),Y(n,F,j),ye(M,n,j),B=!0},p:R,i(n){B||(Se(M.$$.fragment,n),B=!0)},o(n){Ae(M.$$.fragment,n),B=!1},d(n){n&&o(t),n&&o(r),n&&o(F),Me(M,n)}}}function Ge(s){return Ie({colors:{selectLabel:"text-gray-500 dark:text-gray-300",selectButton:"ring-1 ring-gray-900/10 rounded-lg shadow-sm p-2 text-gray-700 bg-white dark:bg-gray-700 dark:ring-0 dark:highlight-white/5 dark:text-gray-200",selectIcon:"text-gray-400",dropdownList:"text-gray-700 bg-white ring-1 ring-black ring-opacity-5 dark:bg-gray-700 dark:ring-0 dark:highlight-white/5 dark:text-gray-300",dropdownHover:"hover:bg-gray-50 hover:dark:bg-gray-800/50",textActive:"text-sky-500",iconActiveStroke:"stroke-sky-500",iconActiveFill:"fill-sky-500",iconActiveShade:"fill-sky-400/20",iconStroke:"stroke-gray-400",iconFill:"fill-gray-400"}}),[]}class Pe extends ce{constructor(t){super(),de(this,t,Ge,Ve,he,{})}}export{Pe as component};
