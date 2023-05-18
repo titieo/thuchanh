@@ -9,10 +9,10 @@
 	dates.sort((a, b) => a.id - b.id);
 	const inputDates = dates.map((ele) => ({
 		created_at: ele.created_at,
-		tara: ele.tara,
-		taras_homage: ele.taras_homage,
-		lay_dai: ele.lay_dai,
-		hang_phuc: ele.hang_phuc,
+		tara: ele.tara === null ? '' : ele.tara,
+		taras_homage: ele.taras_homage === null ? '' : ele.taras_homage,
+		lay_dai: ele.lay_dai === null ? '' : ele.lay_dai,
+		hang_phuc: ele.hang_phuc === null ? '' : ele.hang_phuc,
 		lhs: ele.lhs === null ? '' : ele.lhs,
 		seven_lines: ele.seven_lines === null ? '' : ele.seven_lines,
 	}));

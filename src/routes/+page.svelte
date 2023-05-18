@@ -29,7 +29,7 @@
 			class="flex flex-col items-center no-underline text-black font-bold"
 		>
 			<img
-				class="w-24 h-24 lg:(w-30 h-30) rounded-lg hover:rounded-3xl duration-200 transition-all ease-in-out"
+				class="w-20 h-20 md:(w-24 h-24) lg:(w-30 h-30) rounded-lg hover:rounded-3xl duration-200 transition-all ease-in-out"
 				src="{base}/tam.png"
 				style="object-fit: cover;object-position: 50% 50%;;image-resolution: from-image;"
 				alt=""
@@ -41,7 +41,7 @@
 			class="flex flex-col items-center no-underline text-black font-bold"
 		>
 			<img
-				class="w-24 h-24 lg:(w-30 h-30) rounded-lg hover:rounded-3xl duration-200 transition-all ease-in-out"
+				class="w-20 h-20 md:(w-24 h-24) lg:(w-30 h-30) rounded-lg hover:rounded-3xl duration-200 transition-all ease-in-out"
 				src="{base}/hung.jpg"
 				style="object-fit: cover;object-position: center;"
 				alt=""
@@ -59,7 +59,7 @@
 				width="24"
 				height="24"
 				viewBox="0 0 24 24"
-				class="w-22 h-22 p-2 lg:(w-30 h-30) lg:(w-30 h-30) rounded-lg hover:rounded-3xl duration-200 transition-all ease-in-out bg-white"
+				class="w-18 h-18 md:(w-24 h-24) p-2 lg:(w-30 h-30) rounded-lg hover:rounded-3xl duration-200 transition-all ease-in-out bg-white"
 				><path
 					fill="currentColor"
 					d="M3 8V3h19v5H3Zm5 2v11H3V10h5Zm14 11h-5V10h5v11Zm-7-11v11h-5V10h5Z"

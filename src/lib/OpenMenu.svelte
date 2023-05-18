@@ -7,12 +7,12 @@
 
 {#if menuVisible}
 	<nav
-		class="absolute gap-1 bottom-21 right-2 rounded-md cursor-pointer text-white p-4 flex flex-col border-gray-900 shadow border-2 min-w-[8rem]"
+		class="absolute gap-1 bottom-16 text-xs md:(text-sm bottom-21) right-2 rounded-md cursor-pointer text-white p-4 flex flex-col border-gray-900 shadow border-2 min-w-[8rem] bg-white"
 		transition:fly
 	>
 		<button
 			on:click={() => ((visible = !visible), (menuVisible = false))}
-			class="text-sm py-2 px-4 cursor-pointer rounded-md flex-center border-none gap-2 hover:border-gray bg-white hover:border-gray-900 hover:shadow transition-all ease-in"
+			class="py-2 px-4 cursor-pointer rounded-md flex-center border-none gap-2 hover:border-gray bg-white hover:border-gray-900 hover:shadow transition-all ease-in"
 			><svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="16"
@@ -27,7 +27,7 @@
 
 		<a
 			href="{base}/"
-			class="text-sm py-2 px-4 cursor-pointer rounded-md flex items-center border-none gap-2 hover:border-gray text-dark-600 bg-white decoration-none hover:border-gray-900 hover:shadow transition-all ease-in"
+			class="py-2 px-4 cursor-pointer rounded-md flex items-center border-none gap-2 hover:border-gray text-dark-600 bg-white decoration-none hover:border-gray-900 hover:shadow transition-all ease-in"
 			><svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="16"
@@ -38,7 +38,7 @@
 		>
 		<a
 			href="{base}/table"
-			class="text-sm py-2 px-4 cursor-pointer rounded-md flex items-center border-none gap-2 hover:border-gray text-dark-600 bg-white decoration-none hover:border-gray-900 hover:shadow transition-all ease-in"
+			class="py-2 px-4 cursor-pointer rounded-md flex items-center border-none gap-2 hover:border-gray text-dark-600 bg-white decoration-none hover:border-gray-900 hover:shadow transition-all ease-in"
 			><svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="16"
@@ -52,18 +52,18 @@
 		>
 		<a
 			href="{base}/tara"
-			class="text-sm py-2 px-4 cursor-pointer rounded-md flex items-center border-none gap-2 hover:border-gray text-dark-600 bg-white decoration-none hover:border-gray-900 hover:shadow transition-all ease-in"
+			class="py-2 px-4 cursor-pointer rounded-md flex items-center border-none gap-2 hover:border-gray text-dark-600 bg-white decoration-none hover:border-gray-900 hover:shadow transition-all ease-in"
 			>Green Tara</a
 		>
 		<a
 			href="{base}/guru_rinpoche"
-			class="text-sm py-2 px-4 cursor-pointer rounded-md flex items-center border-none gap-2 hover:border-gray text-dark-600 bg-white decoration-none hover:border-gray-900 hover:shadow transition-all ease-in"
+			class="py-2 px-4 cursor-pointer rounded-md flex items-center border-none gap-2 hover:border-gray text-dark-600 bg-white decoration-none hover:border-gray-900 hover:shadow transition-all ease-in"
 			>Guru Rinpoche</a
 		>
 	</nav>
 {/if}
 
-<div class="absolute bottom-1 right-2 py-3 sm:max-w-xl mx-auto">
+<div class="absolute bottom-1 right-1 sm:right-2 py-3 sm:max-w-xl mx-auto">
 	<nav>
 		<button
 			class="rounded-full text-gray-500 w-10 h-10 md:w-14 md:h-14 relative focus:outline-none bg-white cursor-pointer"
