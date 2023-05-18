@@ -118,7 +118,7 @@
 <main style="height: 100vh" class="h-screen overflow-y-hidden">
 	<StatisticPage pictureName="0.green_tara.png">
 		<div
-			class="scrollbar scrollbar-rounded overflow-y-scroll max-h-[90vh] flex flex-col gap-4 m-2 p-2
+			class="scrollbar scrollbar-rounded dark:(scrollbar-track-color-gray-700 scrollbar-thumb-color-gray-600) overflow-y-scroll max-h-[90vh] flex flex-col gap-4 m-2 p-2
             md:(px-4 py-4) md:(mt-4 mr-10)"
 		>
 			<!-- p="x-4 y-4" -->

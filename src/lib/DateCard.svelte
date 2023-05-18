@@ -2,10 +2,21 @@
 	// import InfiniteScroll from 'svelte-infinite-scroll';
 	import dayjs from 'dayjs';
 	import customParseFormat from 'dayjs/plugin/customParseFormat';
+	import { useMediaQuery } from 'svelte-breakpoints';
+
+	const isMobile = useMediaQuery('(max-width: 768px)');
+	// => Returns type Readable<boolean>
+
 	dayjs.extend(customParseFormat);
 	export let created_at, dates_length, order;
 	// export let dates,order;
-	() => console.log(created_at, typeof created_at);
+	$: created_date = created_at;
+	$: if ($isMobile) {
+		// console.log('desktop!');
+		created_date = dayjs(created_at, 'DD/MM/YYYY').format('DD/MM');
+	} else {
+		created_date = created_at;
+	}
 </script>
 
 <div
@@ -13,10 +24,8 @@
 	style="order:{dates_length - order}"
 >
 	<!-- style="order:{dates.length - order}" -->
-	<h3 class="text-base md:text-lg font-title">
-		<!-- {startDate.add(order, 'd').format('DD/MM/YYYY')}? -->
-		{created_at}
-		<!-- {dayjs().format('DD/MM/YYYY')} -->
+	<h3 class="text-sm sm:text-base md:text-lg font-title">
+		{created_date}
 	</h3>
 	<slot />
 	<!-- TODO: Infinite scroll -->

@@ -1,8 +1,9 @@
 <script>
 	import { fade } from 'svelte/transition';
 	import 'virtual:uno.css';
-	export let data;
 	import { base } from '$app/paths';
+
+	export let data;
 </script>
 
 <svelte:head
@@ -29,7 +30,10 @@
 	<meta name="theme-color" content="#ffffff" /></svelte:head
 >
 {#key data.pathname}
-	<div transition:fade class="max-h-screen font-content">
+	<div
+		transition:fade
+		class="max-h-screen font-content dark:bg-gray-800 dark:text-white"
+	>
 		<slot />
 	</div>
 {/key}
