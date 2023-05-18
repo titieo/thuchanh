@@ -1,6 +1,10 @@
 import { createClient } from '@supabase/supabase-js';
+import {
+	PUBLIC_SUPABASE_URL,
+	PUBLIC_SUPABASE_ANON_KEY,
+} from '$env/static/public';
 
 export const supabase = createClient(
-	'https://weaughxswjpwirdjraab.supabase.co',
-	'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndlYXVnaHhzd2pwd2lyZGpyYWFiIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODM5NDc4NTcsImV4cCI6MTk5OTUyMzg1N30.hB8oikmuFAR1AyhmydMqRTKc-gw3QK8aLbOZzpTl2Wk'
+	PUBLIC_SUPABASE_URL,
+	PUBLIC_SUPABASE_ANON_KEY
 );

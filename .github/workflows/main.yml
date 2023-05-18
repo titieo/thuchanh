@@ -30,12 +30,15 @@ jobs:
           pnpm run build
           touch build/.nojekyll
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main'}}
-        with:
-          branch: gh-pages
-          folder: 'build/'
+        #   TODO: Check back on github action
+
+    #   - name: Deploy
+    #     uses: JamesIves/github-pages-deploy-action@v4
+    #     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main'}}
+    #     with:
+    #       branch: gh-pages
+    #       folder: 'build/'
+
 # name: Build
 # on:
 #   push:
