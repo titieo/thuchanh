@@ -27,7 +27,6 @@
 		"@unovis/ts": "^1.1.1",
 		"dayjs": "^1.11.7",
 		"felte": "^1.2.7",
-		"svelte-infinite-scroll": "^2.0.1",
-		"svelte-theme-select": "^0.0.4"
+		"svelte-infinite-scroll": "^2.0.1"
 	}
 }

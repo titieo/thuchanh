@@ -19,9 +19,6 @@ dependencies:
   svelte-infinite-scroll:
     specifier: ^2.0.1
     version: 2.0.1
-  svelte-theme-select:
-    specifier: ^0.0.4
-    version: 0.0.4
 
 devDependencies:
   '@sveltejs/adapter-netlify':
@@ -2584,12 +2581,6 @@ packages:
       - svelte
     dev: true
 
-  /svelte-headlessui@0.0.11:
-    resolution: {integrity: sha512-Tmef27bcFgQ72O4Rw1+dvIxWmL+Av+Ccx4VxqGB1WoLnkL69pUk93ljMrqEs+UghYi2iM0OgU4pl2PdR4DZ3pw==}
-    dependencies:
-      svelte-transition: 0.0.7
-    dev: false
-
   /svelte-hmr@0.15.1(svelte@3.59.1):
     resolution: {integrity: sha512-BiKB4RZ8YSwRKCNVdNxK/GfY+r4Kjgp9jCLEy0DuqAKfmQtpL38cQK3afdpjw4sqSs4PLi3jIPJIFp259NkZtA==}
     engines: {node: ^12.20 || ^14.13.1 || >= 16}
@@ -2620,17 +2611,6 @@ packages:
   /svelte-subscribe@1.0.5:
     resolution: {integrity: sha512-p+vRSBVzR9BQC72mjd2eqCv8zx5euLZQJF7QqAw5d41aKzQVOq90y71/NXch+nDNMjWbRo0CX+brcWYgPryJlw==}
     dev: true
-
-  /svelte-theme-select@0.0.4:
-    resolution: {integrity: sha512-HskCQ9e0P3Cddb5eU6g9VIxHYtxDgWr2c5u23IPLM5mCmbNlwyX9VUl8wzpFCLXDApIg9xur0tQOIH8lsZLNeg==}
-    dependencies:
-      svelte-headlessui: 0.0.11
-      svelte-transition: 0.0.7
-    dev: false
-
-  /svelte-transition@0.0.7:
-    resolution: {integrity: sha512-YMbl+eIkzeYKBz6E/I8KI8RMezhqB38t2B/Mx8BotmtiN+5wnKath7CWDc+8U9zKGJ/iUYHmx4MwQjIzo05nVg==}
-    dev: false
 
   /svelte@3.59.1:
     resolution: {integrity: sha512-pKj8fEBmqf6mq3/NfrB9SLtcJcUvjYSWyePlfCqN9gujLB25RitWK8PvFzlwim6hD/We35KbPlRteuA6rnPGcQ==}

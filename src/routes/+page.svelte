@@ -2,29 +2,7 @@
 	import 'virtual:uno.css';
 	import { presetUno } from 'unocss';
 	import { base } from '$app/paths';
-	import {
-		createThemeSwitcher,
-		Theme,
-		ThemeToggle,
-		ThemeSelect,
-	} from 'svelte-theme-select';
-	createThemeSwitcher({
-		colors: {
-			selectLabel: 'text-gray-500 dark:text-gray-300',
-			selectButton:
-				'ring-1 ring-gray-900/10 rounded-lg shadow-sm p-2 text-gray-700 bg-white dark:bg-gray-700 dark:ring-0 dark:highlight-white/5 dark:text-gray-200',
-			selectIcon: 'text-gray-400',
-			dropdownList:
-				'text-gray-700 bg-white ring-1 ring-black ring-opacity-5 dark:bg-gray-700 dark:ring-0 dark:highlight-white/5 dark:text-gray-300',
-			dropdownHover: 'hover:bg-gray-50 hover:dark:bg-gray-800/50',
-			textActive: 'text-sky-500',
-			iconActiveStroke: 'stroke-sky-500',
-			iconActiveFill: 'fill-sky-500',
-			iconActiveShade: 'fill-sky-400/20',
-			iconStroke: 'stroke-gray-400',
-			iconFill: 'fill-gray-400',
-		},
-	});
+	import ThemeSwitch from '$lib/ThemeSwitch.svelte';
 	// TODO: Check back on svelte-fullpage
 </script>
 
@@ -42,13 +20,7 @@
 	<!-- style="background-image: linear-gradient(to bottom right,#fdd9aa,#f1c89b)" -->
 	<div class="text-center prose z-1 flex-col flex-center justify-self-center">
 		<h1>KẾT QUẢ THỰC HÀNH</h1>
-		<!-- <div class="hidden md:block">
-			<ThemeToggle />
-		</div>
-
-		<div class="block md:hidden">
-			<ThemeSelect />
-		</div> -->
+		<ThemeSwitch width="40" height="40" />
 	</div>
 	<div
 		class="place-self-center z-1 flex lt-sm:text-xl text-lg lg:text-xl gap-4"
@@ -110,7 +82,7 @@
 	</picture>
 </main>
 
-<Theme />
+<!-- <Theme /> -->
 
 <style>
 	:global(body) {

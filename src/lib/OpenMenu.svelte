@@ -2,43 +2,13 @@
 	import { fly } from 'svelte/transition';
 	export let menuVisible, visible;
 	import { base } from '$app/paths';
-	import { get } from 'svelte/store';
-	import { colorTheme } from './theme';
-	import {
-		createThemeSwitcher,
-		Theme,
-		ThemeToggle,
-		ThemeSelect,
-	} from 'svelte-theme-select';
-	// preferences.subscribe(...) // subscribe to changes
-	// colorTheme.update(); // update value
-	// colorTheme.set(); // set value
-	// $colorTheme; // read value with automatic subscription
-	
-
-	createThemeSwitcher({
-		colors: {
-			selectLabel: 'text-gray-500 dark:text-gray-300',
-			selectButton:
-				'ring-1 ring-gray-900/10 rounded-lg shadow-sm p-2 text-gray-700 bg-white dark:bg-gray-700 dark:ring-0 dark:highlight-white/5 dark:text-gray-200',
-			selectIcon: 'text-gray-400',
-			dropdownList:
-				'text-gray-700 bg-white ring-1 ring-black ring-opacity-5 dark:bg-gray-700 dark:ring-0 dark:highlight-white/5 dark:text-gray-300',
-			dropdownHover: 'hover:bg-gray-50 hover:dark:bg-gray-800/50',
-			textActive: 'text-sky-500',
-			iconActiveStroke: 'stroke-sky-500',
-			iconActiveFill: 'fill-sky-500',
-			iconActiveShade: 'fill-sky-400/20',
-			iconStroke: 'stroke-gray-400',
-			iconFill: 'fill-gray-400',
-		},
-	});
+	import ThemeSwitch from '$lib/ThemeSwitch.svelte';
 	// export let menuVisible;
 </script>
 
 {#if menuVisible}
 	<nav
-		class="absolute gap-1 bottom-16 text-xs md:(text-sm bottom-21) right-2 rounded-md cursor-pointer p-4 flex flex-col border-gray-900 shadow border-2 min-w-[8rem] bg-white dark:bg-gray-500"
+		class="fixed gap-1 bottom-16 text-xs md:(text-sm bottom-21) right-2 rounded-md cursor-pointer p-4 flex flex-col border-gray-900 shadow border-2 min-w-[8rem] bg-white dark:bg-gray-500"
 		transition:fly
 	>
 		<button
@@ -91,8 +61,7 @@
 			class="py-2 px-4 cursor-pointer rounded-md flex items-center border-none gap-2 hover:border-gray bg-white decoration-none hover:border-gray-900 hover:shadow transition-all ease-in dark:bg-gray-500 text-dark-600 dark:text-white"
 			>Guru Rinpoche</a
 		>
-		 <ThemeToggle /> 
-		<!--<button />-->
+		<ThemeSwitch />
 	</nav>
 {/if}
 
@@ -129,4 +98,4 @@
 	</nav>
 </div>
 
-<Theme />
+<!-- <Theme /> -->

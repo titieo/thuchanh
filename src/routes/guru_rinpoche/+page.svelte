@@ -56,7 +56,7 @@
 					},
 				];
 			}
-			console.log(values);
+			// console.log(values);
 			reset();
 			visible = false;
 		},
@@ -67,7 +67,7 @@
 	let { dates } = data;
 	$: ({ dates } = data);
 	dates.sort((a, b) => a.id - b.id); // b - a for reverse sort
-	console.log(dates);
+	// console.log(dates);
 	let dates_length = dates.length;
 	// $: dates = [...dates, ...allDates.splice(size * page, size * (page + 1) - 1)];
 

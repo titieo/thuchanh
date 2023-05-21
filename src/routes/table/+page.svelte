@@ -1,7 +1,7 @@
 <script>
 	import { createTable, Subscribe, Render } from 'svelte-headless-table';
 	import { readable } from 'svelte/store';
-
+	// import OpenMenu from '$lib/OpenMenu.svelte';
 	export let data;
 
 	let { dates } = data;
@@ -135,6 +135,8 @@
 		</div>
 	</div>
 </div>
+
+<!-- <OpenMenu /> -->
 
 <style>
 	table {
