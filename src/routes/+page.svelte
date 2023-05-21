@@ -81,12 +81,3 @@
 		/>
 	</picture>
 </main>
-
-<!-- <Theme /> -->
-
-<style>
-	:global(body) {
-		height: 100vh;
-		overflow-x: hidden;
-	}
-</style>

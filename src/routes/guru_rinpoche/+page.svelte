@@ -97,7 +97,7 @@
 
 <!-- TODO: https://unocss.dev/presets/wind#breakpoints - Add breakpoints -->
 
-<main class="overflow-y-hidden">
+<main class="overflow-hidden">
 	<StatisticPage pictureName="guru_rinpoche.webp" reverse>
 		<div
 			class="scrollbar scrollbar-rounded dark:(scrollbar-track-color-gray-700 scrollbar-thumb-color-gray-600) overflow-y-scroll max-h-[20rem] flex flex-col gap-4"
@@ -114,13 +114,13 @@
 				>
 			{/each}
 		</div>
-		<!-- <StatisticLineGraph
+
+		<StatisticLineGraph
 			{bulletLegendItems}
 			{DataRecord}
 			{axisY}
 			{lineGraphDates}
-		/> -->
-		<!-- TODO: Fix the graph -->
+		/>
 	</StatisticPage>
 </main>
 <OpenMenu bind:menuVisible bind:visible />
@@ -158,10 +158,3 @@
 		</div>
 	</SubmitForm>
 {/if}
-
-<style>
-	:global(body) {
-		height: 100vh;
-		overflow-x: hidden;
-	}
-</style>

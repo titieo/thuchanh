@@ -3,7 +3,6 @@
 	import { createForm } from 'felte';
 	import { DateInput } from 'date-picker-svelte';
 	import dayjs from 'dayjs';
-
 	// TODO: Check back on this (uninstall?)
 	// import Line from 'svelte-chartjs/Line.svelte';
 
@@ -115,7 +114,7 @@
 <svelte:head>
 	<title>Green Tara</title>
 </svelte:head>
-<main style="height: 100vh" class="h-screen overflow-y-hidden">
+<main style="height: 100vh" class="h-screen overflow-hidden">
 	<StatisticPage pictureName="0.green_tara.png">
 		<div
 			class="scrollbar scrollbar-rounded dark:(scrollbar-track-color-gray-700 scrollbar-thumb-color-gray-600) overflow-y-scroll max-h-[90vh] flex flex-col gap-4 m-2 p-2
@@ -147,13 +146,12 @@
 			{/each}
 		</div>
 
-		<!-- <StatisticLineGraph
+		<StatisticLineGraph
 			{bulletLegendItems}
 			{DataRecord}
 			{axisY}
 			{lineGraphDates}
-		/> -->
-		<!-- TODO: Fix the graph -->
+		/>
 	</StatisticPage>
 	<OpenMenu bind:menuVisible bind:visible />
 
