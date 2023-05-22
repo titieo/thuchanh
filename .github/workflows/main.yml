@@ -1,43 +1,43 @@
-name: Deploy to GitHub Pages
-on: [push]
+# name: Deploy to GitHub Pages
+# on: [push]
 
-jobs:
-  build_site:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+# jobs:
+#   build_site:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v3
 
-      # If you're using pnpm, add this step then change the commands and cache key below to use `pnpm`
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
+#       # If you're using pnpm, add this step then change the commands and cache key below to use `pnpm`
+#       - name: Install pnpm
+#         uses: pnpm/action-setup@v2
+#         with:
+#           version: 8
 
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: pnpm
+#       - name: Install Node.js
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: 18
+#           cache: pnpm
 
-      - name: Install dependencies
-        run: pnpm install
+#       - name: Install dependencies
+#         run: pnpm install
 
-      - name: build
-        env:
-          BASE_PATH: '/thuchanh'
-        run: |
-          pnpm run build
-          touch build/.nojekyll
+#       - name: build
+#         env:
+#           BASE_PATH: '/thuchanh'
+#         run: |
+#           pnpm run build
+#           touch build/.nojekyll
 
-        #   TODO: Check back on github action
+#   TODO: Check back on github action
 
-    #   - name: Deploy
-    #     uses: JamesIves/github-pages-deploy-action@v4
-    #     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main'}}
-    #     with:
-    #       branch: gh-pages
-    #       folder: 'build/'
+#   - name: Deploy
+#     uses: JamesIves/github-pages-deploy-action@v4
+#     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main'}}
+#     with:
+#       branch: gh-pages
+#       folder: 'build/'
 
 # name: Build
 # on:
