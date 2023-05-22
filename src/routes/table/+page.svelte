@@ -80,7 +80,7 @@
 </script>
 
 <svelte:head>
-	<title>Table</title>
+	<title>Thời Khoá Thực Hành</title>
 </svelte:head>
 
 <div

@@ -100,7 +100,7 @@
 <main class="overflow-hidden">
 	<StatisticPage pictureName="guru_rinpoche.webp" reverse>
 		<div
-			class="scrollbar scrollbar-rounded dark:(scrollbar-track-color-gray-700 scrollbar-thumb-color-gray-600) overflow-y-scroll max-h-[20rem] flex flex-col gap-4"
+			class="scrollbar scrollbar-rounded dark:(scrollbar-track-color-gray-700 scrollbar-thumb-color-gray-600) lg:max-w-60vw overflow-y-scroll max-h-[20rem] flex flex-col gap-4"
 			p="x-4 y-4"
 			m="t-4 r-10"
 		>

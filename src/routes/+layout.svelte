@@ -2,19 +2,7 @@
 	import { fade } from 'svelte/transition';
 	import 'virtual:uno.css';
 	import { base } from '$app/paths';
-	import { onMount } from 'svelte';
 	export let data;
-	// onMount(async () => {
-	// 	if (
-	// 		localStorage.getItem('color-theme') === 'dark' ||
-	// 		(!('color-theme' in localStorage) &&
-	// 			window.matchMedia('(prefers-color-scheme: dark)').matches)
-	// 	) {
-	// 		document.documentElement.classList.add('dark');
-	// 	} else {
-	// 		document.documentElement.classList.remove('dark');
-	// 	}
-	// });
 </script>
 
 <svelte:head

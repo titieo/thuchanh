@@ -12,7 +12,6 @@
 	// export let dates,order;
 	$: created_date = created_at;
 	$: if ($isMobile) {
-		// console.log('desktop!');
 		created_date = dayjs(created_at, 'DD/MM/YYYY').format('DD/MM');
 	} else {
 		created_date = created_at;
@@ -20,7 +19,7 @@
 </script>
 
 <div
-	class="card w-full group flex gap-4 items-center justify-between"
+	class="card w-full group flex gap-4 items-center justify-between max-w-60vw"
 	style="order:{dates_length - order}"
 >
 	<!-- style="order:{dates.length - order}" -->
