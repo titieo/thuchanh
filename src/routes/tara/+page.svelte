@@ -5,7 +5,7 @@
 	import dayjs from 'dayjs';
 	// TODO: Check back on this (uninstall?)
 	// import Line from 'svelte-chartjs/Line.svelte';
-
+	// import Type main from '../DatabaseDefinitions.d.ts';
 	// import Menu from '$lib/Menu.svelte';
 	import StatisticLineGraph from '$lib/StatisticLineGraph.svelte';
 	import StatisticPage from '$lib/StatisticPage.svelte';
@@ -24,6 +24,7 @@
 	// let dates = [];
 	export let data;
 
+	// TODO: Typescript
 	let { dates } = data;
 	$: ({ dates } = data);
 	dates.sort((a, b) => a.id - b.id); // b - a for reverse sort

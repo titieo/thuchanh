@@ -21,5 +21,5 @@ export default {
 		// 	base: dev ? '' : '/tutap',
 		// },
 	},
-	preprocess: [vitePreprocess()],
+	preprocess: [vitePreprocess({ script: true, style: false })],
 };

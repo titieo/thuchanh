@@ -2,7 +2,8 @@
 	import { fade } from 'svelte/transition';
 	import 'virtual:uno.css';
 	import { base } from '$app/paths';
-	export let data;
+	import { onMount } from 'svelte';
+	// import type { LayoutData } from './$types';
 </script>
 
 <svelte:head
@@ -28,11 +29,11 @@
 	<meta name="msapplication-TileColor" content="#da532c" />
 	<meta name="theme-color" content="#ffffff" /></svelte:head
 >
-{#key data.pathname}
-	<div
-		transition:fade
-		class="max-h-screen font-content dark:bg-gray-800 dark:text-white"
-	>
-		<slot />
-	</div>
-{/key}
+<!-- {#key data.pathname} -->
+<div
+	transition:fade
+	class="max-h-screen font-content dark:bg-gray-800 dark:text-white"
+>
+	<slot />
+</div>
+<!-- {/key} -->

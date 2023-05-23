@@ -1,7 +1,8 @@
 <script lang="ts">
 	// TODO: Typed form
-	export let visible: boolean, form: any;
 	import { fade } from 'svelte/transition';
+	// let hidden = false;
+	export let visible: boolean, form: any;
 </script>
 
 <div
