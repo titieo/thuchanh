@@ -1,14 +1,14 @@
-<script>
+<script lang="ts">
 	// import InfiniteScroll from 'svelte-infinite-scroll';
 	import dayjs from 'dayjs';
 	import customParseFormat from 'dayjs/plugin/customParseFormat';
 	import { useMediaQuery } from 'svelte-breakpoints';
-
+	// Module '"D:/Hobby/thuchanh/node_modules/.pnpm/dayjs@1.11.7/node_modules/dayjs/index"' can only be default-imported using the 'allowSyntheticDefaultImports' flag
 	const isMobile = useMediaQuery('(max-width: 768px)');
 	// => Returns type Readable<boolean>
 
 	dayjs.extend(customParseFormat);
-	export let created_at, dates_length, order;
+	export let created_at: string, dates_length: number, order: number;
 	// export let dates,order;
 	$: created_date = created_at;
 	$: if ($isMobile) {

@@ -1,3 +1,4 @@
+<!-- TODO: Add TypeScript support -->
 <script>
 	import {
 		VisXYContainer,

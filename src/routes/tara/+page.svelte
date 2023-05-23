@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { presetUno } from 'unocss';
 	import { createForm } from 'felte';
 	import { DateInput } from 'date-picker-svelte';
@@ -11,7 +11,7 @@
 	import StatisticPage from '$lib/StatisticPage.svelte';
 	import DateCard from '$lib/DateCard.svelte';
 	import { supabase } from '$lib/supabaseClient';
-	import OpenFormButton from '$lib/OpenFormButton.svelte';
+
 	import SubmitForm from '$lib/SubmitForm.svelte';
 	import OpenMenu from '$lib/OpenMenu.svelte';
 
@@ -37,9 +37,9 @@
 		onSubmit: async (values, { reset }) => {
 			/* call to an api dates_length */
 			const created_date = dayjs(created_at).format('DD/MM/YYYY');
-			console.log(values.created_at, dates[dates_length - 1].created_at);
-			if (values.created_at == dates[dates_length - 1].created_at) {
-				let lastDate = dates[dates_length - 1];
+			// TODO: check back on type of lastDate
+			const lastDate: any = dates[dates_length - 1];
+			if (created_date == lastDate.created_at) {
 				await supabase
 					.from('main')
 					.update({
@@ -48,7 +48,7 @@
 						hang_phuc: values.hang_phuc + lastDate.hang_phuc,
 						lay_dai: values.lay_dai + lastDate.lay_dai,
 					})
-					.eq('created_at', values.created_at);
+					.eq('created_at', created_date);
 				lastDate.tara += values.tara;
 				lastDate.taras_homage += values.taras_homage;
 				lastDate.hang_phuc += values.hang_phuc;
@@ -83,7 +83,7 @@
 
 	let lineGraphDates = dates.slice(-10);
 	// console.log(lineGraphDates);
-	let DataRecord = [];
+	let DataRecord: object[] = [];
 	lineGraphDates.forEach((e, i) => {
 		DataRecord.push({
 			x: i,
@@ -95,10 +95,10 @@
 	});
 	// const x = (DataRecord) => DataRecord.x;
 	const axisY = [
-		(DataRecord) => DataRecord.y,
-		(DataRecord) => DataRecord.y1,
-		(DataRecord) => DataRecord.y2,
-		(DataRecord) => DataRecord.y3,
+		(DataRecord: { y: number }) => DataRecord.y,
+		(DataRecord: { y1: number }) => DataRecord.y1,
+		(DataRecord: { y2: number }) => DataRecord.y2,
+		(DataRecord: { y3: number }) => DataRecord.y3,
 	];
 
 	const bulletLegendItems = [
@@ -124,7 +124,8 @@
 			<!-- p="x-4 y-4" -->
 			{#each dates as { tara, taras_homage, created_at, hang_phuc, lay_dai, tam }, i}
 				<!-- {#each dates as { tara, taras_homage, created_at, lay_dai, lhs, hang_phuc, tam, qt_chu_tara }, i} -->
-				<DateCard {page} {created_at} {dates_length} order={i}>
+				<!-- {page} for infinite scrolling -->
+				<DateCard {created_at} {dates_length} order={i}>
 					<p class="text-xs lg:text-base text-right">
 						{tara * 108} Biến Green Tara ({hang_phuc}
 						Phút Kiết Già Hàng Phục) <br />
@@ -158,7 +159,7 @@
 
 	<!-- Start of the form -->
 	{#if visible}
-		<SubmitForm bind:visible buttonColor="green-600" {form}>
+		<SubmitForm bind:visible {form}>
 			<div class="col-start-1 row-start-1">
 				<h4>Green Tara (Chuỗi)</h4>
 				<input type="number" name="tara" class="py-2 px-4 mt-2 rounded-md" />
@@ -191,9 +192,9 @@
 					visible={true}
 					closeOnSelection={false}
 					placeholder="dd/MM/yyyy"
-					required
 					class="py-2 px-4 mt-2 rounded-md"
 				/>
+				<!-- required={true} for form -->
 			</div>
 		</SubmitForm>
 	{/if}

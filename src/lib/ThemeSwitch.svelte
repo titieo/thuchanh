@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
 	import { browser } from '$app/environment';
 
-	export let width = 32,
-		height = 32;
+	export const width: number = 32,
+		height: number = 32;
 	let darkMode = true;
 
 	function handleSwitchDarkMode() {

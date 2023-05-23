@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import 'virtual:uno.css';
 	import { presetUno } from 'unocss';
 
@@ -8,9 +8,8 @@
 
 	import StatisticPage from '$lib/StatisticPage.svelte';
 	import DateCard from '$lib/DateCard.svelte';
-	import { supabase } from '$lib/supabaseClient';
+	import { supabase } from '$lib/supabaseClient.js';
 	import OpenMenu from '$lib/OpenMenu.svelte';
-	// import OpenFormButton from '$lib/OpenFormButton.svelte';
 	import SubmitForm from '$lib/SubmitForm.svelte';
 	import StatisticLineGraph from '$lib/StatisticLineGraph.svelte';
 
@@ -26,16 +25,16 @@
 		onSubmit: async (values, { reset }) => {
 			/* call to an api */
 			const created_date = dayjs(created_at).format('DD/MM/YYYY');
-
-			if (values.created_at == dates[dates_length - 1].created_at) {
-				let lastDate = dates[dates_length - 1];
+			// TODO: check back on type of lastDate
+			const lastDate: any = dates[dates_length - 1];
+			if (created_date == lastDate.created_at) {
 				await supabase
 					.from('main')
 					.update({
 						lhs: values.lhs + lastDate.lhs,
 						seven_lines: values.seven_lines + lastDate.seven_lines,
 					})
-					.eq('created_at', values.created_at);
+					.eq('created_at', created_date);
 				lastDate.lhs += values.lhs;
 				lastDate.seven_lines += values.seven_lines;
 			} else {
@@ -74,7 +73,7 @@
 	// Line Graph
 	let lineGraphDates = dates.slice(-10);
 	// console.log(lineGraphDates);
-	let DataRecord = [];
+	let DataRecord: object[] = [];
 	lineGraphDates.forEach((e, i) => {
 		DataRecord.push({
 			x: i,
@@ -82,8 +81,11 @@
 			y1: e.seven_lines,
 		});
 	});
-	// const x = (DataRecord) => DataRecord.x;
-	const axisY = [(DataRecord) => DataRecord.y, (DataRecord) => DataRecord.y1];
+
+	const axisY = [
+		(DataRecord: { y: number }) => DataRecord.y,
+		(DataRecord: { y1: number }) => DataRecord.y1,
+	];
 
 	const bulletLegendItems = [
 		'Guru Rinpoche',
@@ -105,7 +107,9 @@
 			m="t-4 r-10"
 		>
 			{#each dates as { lhs, seven_lines, created_at }, i}
-				<DateCard {page} {created_at} {dates_length} order={i}>
+				<!-- Type '{ page: number; created_at: any; dates_length: number; order: number; }' is not assignable to type '{ created_at: string; dates_length: number; order: number; }'.
+  Object literal may only specify known properties, and 'page' does not exist in type '{ created_at: string; dates_length: number; order: number; }'. -->
+				<DateCard {created_at} {dates_length} order={i}>
 					<p class="text-xs lg:text-base text-right">
 						{lhs ? lhs : 0} Biến Guru Rinpoche - Tán 7 dòng: {seven_lines
 							? seven_lines
@@ -126,12 +130,7 @@
 <OpenMenu bind:menuVisible bind:visible />
 <!-- Start of the form -->
 {#if visible}
-	<SubmitForm
-		bind:visible
-		buttonColor="green-600"
-		{form}
-		grid="cols-[1fr_1fr] rows-4"
-	>
+	<SubmitForm bind:visible {form}>
 		<div class="col-start-1 row-start-1">
 			<h4>Guru Rinpoche (Biến)</h4>
 			<input type="number" name="lhs" class="py-2 px-4 mt-2 rounded-md" />
@@ -152,7 +151,6 @@
 				visible={true}
 				closeOnSelection={false}
 				placeholder="dd/MM/yyyy"
-				required
 				class="py-2 px-4 mt-2 rounded-md"
 			/>
 		</div>

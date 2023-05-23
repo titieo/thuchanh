@@ -1,6 +1,6 @@
-<script>
+<script lang="ts">
 	import { fly } from 'svelte/transition';
-	export let menuVisible, visible;
+	export let menuVisible: boolean, visible: boolean;
 	import { base } from '$app/paths';
 	import ThemeSwitch from '$lib/ThemeSwitch.svelte';
 	// export let menuVisible;

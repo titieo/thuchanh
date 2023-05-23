@@ -1,5 +1,6 @@
-<script>
-	export let visible, buttonColor, form, gridClasses;
+<script lang="ts">
+	// TODO: Typed form
+	export let visible: boolean, form: any;
 	import { fade } from 'svelte/transition';
 </script>
 

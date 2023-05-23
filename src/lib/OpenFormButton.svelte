@@ -1,5 +1,6 @@
-<script>
-	export let visible, additionalClasses;
+<script lang="ts">
+	export const additionalClasses: string = '';
+	export let visible: boolean;
 </script>
 
 <button

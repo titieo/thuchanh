@@ -1,5 +1,6 @@
-<script>
-	export let pictureName, reverse;
+<script lang="ts">
+	export let pictureName: string | undefined = undefined,
+		reverse: boolean = false;
 </script>
 
 <div

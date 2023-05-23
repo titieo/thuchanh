@@ -1,5 +1,6 @@
 import adapter from '@sveltejs/adapter-netlify';
 const dev = process.argv.includes('dev');
+import { vitePreprocess } from '@sveltejs/kit/vite';
 /** @type {import('@sveltejs/kit').Config} */
 export default {
 	kit: {
@@ -20,4 +21,5 @@ export default {
 		// 	base: dev ? '' : '/tutap',
 		// },
 	},
+	preprocess: [vitePreprocess()],
 };
