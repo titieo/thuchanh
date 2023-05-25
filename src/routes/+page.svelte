@@ -1,8 +1,9 @@
-<script>
-	import 'virtual:uno.css';
+<script lang="ts">
 	import { presetUno } from 'unocss';
 	import { base } from '$app/paths';
 	import ThemeSwitch from '$lib/ThemeSwitch.svelte';
+
+	// export let data;
 	// TODO: Check back on svelte-fullpage
 </script>
 
@@ -15,12 +16,12 @@
 <!-- <Fullpage> -->
 <main
 	style="background-color: #fdd9aa"
-	class="grid h-screen w-screen overflow-y-hidden sm:grid-cols-[70vw_30vw] lg:grid-cols-[2fr_1fr] grid-rows-[30vh_70vh] font-title"
+	class="grid h-screen w-screen overflow-y-hidden sm:grid-cols-[70vw_30vw] lg:grid-cols-[2fr_1fr] grid-rows-[45vh_55vh] font-title"
 >
 	<!-- style="background-image: linear-gradient(to bottom right,#fdd9aa,#f1c89b)" -->
 	<div class="text-center prose z-1 flex-col flex-center justify-self-center">
 		<h1>KẾT QUẢ THỰC HÀNH</h1>
-		<ThemeSwitch width="40" height="40" />
+		<ThemeSwitch width={40} height={40} />
 	</div>
 	<div
 		class="place-self-center z-1 flex lt-sm:text-xl text-lg lg:text-xl gap-4"

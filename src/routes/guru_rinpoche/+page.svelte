@@ -1,5 +1,4 @@
 <script lang="ts">
-	import 'virtual:uno.css';
 	import { presetUno } from 'unocss';
 
 	import { createForm } from 'felte';
