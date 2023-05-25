@@ -25,7 +25,7 @@
 	export let data;
 
 	// TODO: Typescript
-	let { dates } = data;
+	let { dates, session } = data;
 	$: ({ dates } = data);
 	dates.sort((a, b) => a.id - b.id); // b - a for reverse sort
 	// console.log(dates);
@@ -156,10 +156,10 @@
 			{lineGraphDates}
 		/>
 	</StatisticPage>
-	<OpenMenu bind:menuVisible bind:visible />
+	<OpenMenu bind:menuVisible bind:visible {session} />
 
 	<!-- Start of the form -->
-	{#if visible}
+	{#if visible && session}
 		<SubmitForm bind:visible {form}>
 			<div class="col-start-1 row-start-1">
 				<h4>Green Tara (Chuỗi)</h4>

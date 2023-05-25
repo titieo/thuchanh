@@ -62,7 +62,7 @@
 	// let dates = [];
 
 	export let data;
-	let { dates } = data;
+	let { dates, session } = data;
 	$: ({ dates } = data);
 	dates.sort((a, b) => a.id - b.id); // b - a for reverse sort
 	// console.log(dates);
@@ -126,9 +126,9 @@
 		/>
 	</StatisticPage>
 </main>
-<OpenMenu bind:menuVisible bind:visible />
+<OpenMenu bind:menuVisible bind:visible {session} />
 <!-- Start of the form -->
-{#if visible}
+{#if visible && session}
 	<SubmitForm bind:visible {form}>
 		<div class="col-start-1 row-start-1">
 			<h4>Guru Rinpoche (Biến)</h4>
