@@ -64,13 +64,14 @@
 	export let data;
 	let { dates, session } = data;
 	$: ({ dates } = data);
-	dates.sort((a, b) => a.id - b.id); // b - a for reverse sort
+	dates.sort((a, b) => b.id - a.id);
 	// console.log(dates);
 	let dates_length = dates.length;
 	// $: dates = [...dates, ...allDates.splice(size * page, size * (page + 1) - 1)];
 
 	// Line Graph
-	let lineGraphDates = dates.slice(-10);
+	let lineGraphDates = dates.slice(0, 10);
+	lineGraphDates.sort((a, b) => a.id - b.id);
 	// console.log(lineGraphDates);
 	let DataRecord: object[] = [];
 	lineGraphDates.forEach((e, i) => {
@@ -108,7 +109,7 @@
 			{#each dates as { lhs, seven_lines, created_at }, i}
 				<!-- Type '{ page: number; created_at: any; dates_length: number; order: number; }' is not assignable to type '{ created_at: string; dates_length: number; order: number; }'.
   Object literal may only specify known properties, and 'page' does not exist in type '{ created_at: string; dates_length: number; order: number; }'. -->
-				<DateCard {created_at} {dates_length} order={i}>
+				<DateCard {created_at}>
 					<p class="text-xs lg:text-base text-right">
 						{lhs ? lhs : 0} Biến Guru Rinpoche - Tán 7 dòng: {seven_lines
 							? seven_lines

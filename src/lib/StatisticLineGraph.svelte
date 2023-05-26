@@ -9,9 +9,9 @@
 	} from '@unovis/svelte';
 	export let bulletLegendItems, DataRecord, axisY, lineGraphDates;
 	import { browser } from '$app/environment';
-	import { useMediaQuery } from 'svelte-breakpoints';
+	import { mediaQuery } from 'svelte-legos';
 
-	const isMobile = useMediaQuery('(max-width: 768px)');
+	const isMobile = mediaQuery('(max-width: 768px)');
 </script>
 
 {#if browser && !$isMobile}

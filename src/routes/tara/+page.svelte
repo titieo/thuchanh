@@ -27,8 +27,8 @@
 	// TODO: Typescript
 	let { dates, session } = data;
 	$: ({ dates } = data);
-	dates.sort((a, b) => a.id - b.id); // b - a for reverse sort
-	// console.log(dates);
+	dates.sort((a, b) => b.id - a.id); // b - a for reverse sort
+	console.log(dates);
 	let dates_length = dates.length;
 	// const { form } = createForm();
 	// $: dates = [...dates, ...allDates.splice(size * page, size * (page + 1) - 1)];
@@ -39,7 +39,12 @@
 			/* call to an api dates_length */
 			const created_date = dayjs(created_at).format('DD/MM/YYYY');
 			// TODO: check back on type of lastDate
-			const lastDate: any = dates[dates_length - 1];
+			const lastDate: any = dates[0];
+			console.log(
+				created_date == lastDate.created_at,
+				created_date,
+				lastDate.created_at
+			);
 			if (created_date == lastDate.created_at) {
 				await supabase
 					.from('main')
@@ -82,7 +87,8 @@
 		},
 	});
 
-	let lineGraphDates = dates.slice(-10);
+	let lineGraphDates = dates.slice(0, 10);
+	lineGraphDates.sort((a, b) => a.id - b.id);
 	// console.log(lineGraphDates);
 	let DataRecord: object[] = [];
 	lineGraphDates.forEach((e, i) => {
@@ -126,7 +132,7 @@
 			{#each dates as { tara, taras_homage, created_at, hang_phuc, lay_dai, tam }, i}
 				<!-- {#each dates as { tara, taras_homage, created_at, lay_dai, lhs, hang_phuc, tam, qt_chu_tara }, i} -->
 				<!-- {page} for infinite scrolling -->
-				<DateCard {created_at} {dates_length} order={i}>
+				<DateCard {created_at}>
 					<p class="text-xs lg:text-base text-right">
 						{tara * 108} Biến Green Tara ({hang_phuc}
 						Phút Kiết Già Hàng Phục) <br />

@@ -2,13 +2,14 @@
 	// import InfiniteScroll from 'svelte-infinite-scroll';
 	import dayjs from 'dayjs';
 	import customParseFormat from 'dayjs/plugin/customParseFormat';
-	import { useMediaQuery } from 'svelte-breakpoints';
+	// import { useMediaQuery } from 'svelte-breakpoints';
+	import { mediaQuery } from 'svelte-legos';
 	// Module '"D:/Hobby/thuchanh/node_modules/.pnpm/dayjs@1.11.7/node_modules/dayjs/index"' can only be default-imported using the 'allowSyntheticDefaultImports' flag
-	const isMobile = useMediaQuery('(max-width: 768px)');
+	const isMobile = mediaQuery('(max-width: 768px)');
 	// => Returns type Readable<boolean>
 
 	dayjs.extend(customParseFormat);
-	export let created_at: string, dates_length: number, order: number;
+	export let created_at: string;
 	// export let dates,order;
 	$: created_date = created_at;
 	$: if ($isMobile) {
@@ -20,7 +21,6 @@
 
 <div
 	class="card w-full group flex gap-4 items-center justify-between max-w-60vw"
-	style="order:{dates_length - order}"
 >
 	<!-- style="order:{dates.length - order}" -->
 	<h3 class="text-sm sm:text-base md:text-lg font-title">

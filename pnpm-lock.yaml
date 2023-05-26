@@ -46,8 +46,8 @@ devDependencies:
     specifier: ^2.4.3
     version: 2.4.3(svelte@3.59.1)
   supabase:
-    specifier: ^1.62.4
-    version: 1.62.4
+    specifier: ^1.63.2
+    version: 1.63.2
   svelte:
     specifier: ^3.59.1
     version: 3.59.1
@@ -608,8 +608,8 @@ packages:
     transitivePeerDependencies:
       - encoding
 
-  /@supabase/gotrue-js@2.27.1:
-    resolution: {integrity: sha512-rewbfKTC9DZNnPy4rRpr5ViBXre55wEXPWOueh/ZgwunR1TGmntRcraIM6SDKrP6iRD6ucx325a467uZ5U+KWg==}
+  /@supabase/gotrue-js@2.27.2:
+    resolution: {integrity: sha512-VVD3M//E7A/fuJsvXVfu7Sv8AuxMHL4owRtp6GoRNxtedHJCngcZzZpIWuQUjbwnNmrfvUQEDuxqNZQVqFbJQw==}
     dependencies:
       cross-fetch: 3.1.6
     transitivePeerDependencies:
@@ -642,7 +642,7 @@ packages:
     resolution: {integrity: sha512-omkgSWL1HwnpXZZy+yshFLx/qqxwk9kx9jbRM6IHNEylKrH/sz6JX7rGyIOmN9niDxMRjsCu1nwuBhD6IiF2xg==}
     dependencies:
       '@supabase/functions-js': 2.1.1
-      '@supabase/gotrue-js': 2.27.1
+      '@supabase/gotrue-js': 2.27.2
       '@supabase/postgrest-js': 1.6.1
       '@supabase/realtime-js': 2.7.2
       '@supabase/storage-js': 2.5.1
@@ -730,8 +730,8 @@ packages:
     resolution: {integrity: sha512-COUnqfB2+ckwXXSFInsFdOAWQzCCx+a5hq2ruyj+Vjund94RJQd4LG2u9hnvJrTgunKAaax7ancBYlDrNYxA0g==}
     dev: true
 
-  /@types/d3-array@3.0.4:
-    resolution: {integrity: sha512-nwvEkG9vYOc0Ic7G7kwgviY4AQlTfYGIZ0fqB7CQHXGyYM6nO7kJh5EguSNA3jfh4rq7Sb7eMVq8isuvg2/miQ==}
+  /@types/d3-array@3.0.5:
+    resolution: {integrity: sha512-Qk7fpJ6qFp+26VeQ47WY0mkwXaiq8+76RJcncDEfMc2ocRzXLO67bLFRNI4OX1aGBoPzsM5Y2T+/m1pldOgD+A==}
     dev: false
 
   /@types/d3-axis@3.0.2:
@@ -761,7 +761,7 @@ packages:
   /@types/d3-contour@3.0.2:
     resolution: {integrity: sha512-k6/bGDoAGJZnZWaKzeB+9glgXCYGvh6YlluxzBREiVo8f/X2vpTEdgPy9DN7Z2i42PZOZ4JDhVdlTSTSkLDPlQ==}
     dependencies:
-      '@types/d3-array': 3.0.4
+      '@types/d3-array': 3.0.5
       '@types/geojson': 7946.0.10
     dev: false
 
@@ -887,8 +887,8 @@ packages:
       '@types/d3-selection': 3.0.5
     dev: false
 
-  /@types/d3-zoom@3.0.2:
-    resolution: {integrity: sha512-t09DDJVBI6AkM7N8kuPsnq/3d/ehtRKBN1xSiYjjMCgbiw6HM6Ged5VhvswmhprfKyGvzeTEL/4WBaK9llWvlA==}
+  /@types/d3-zoom@3.0.3:
+    resolution: {integrity: sha512-OWk1yYIIWcZ07+igN6BeoG6rqhnJ/pYe+R1qWFM2DtW49zsoSjgb9G5xB0ZXA8hh2jAzey1XuRmMSoXdKw8MDA==}
     dependencies:
       '@types/d3-interpolate': 3.0.1
       '@types/d3-selection': 3.0.5
@@ -897,7 +897,7 @@ packages:
   /@types/d3@7.4.0:
     resolution: {integrity: sha512-jIfNVK0ZlxcuRDKtRS/SypEyOQ6UHaFQBKv032X45VvxSJ6Yi5G9behy9h6tNTHTDGh5Vq+KbmBjUWLgY4meCA==}
     dependencies:
-      '@types/d3-array': 3.0.4
+      '@types/d3-array': 3.0.5
       '@types/d3-axis': 3.0.2
       '@types/d3-brush': 3.0.2
       '@types/d3-chord': 3.0.2
@@ -926,7 +926,7 @@ packages:
       '@types/d3-time-format': 4.0.0
       '@types/d3-timer': 3.0.0
       '@types/d3-transition': 3.0.3
-      '@types/d3-zoom': 3.0.2
+      '@types/d3-zoom': 3.0.3
     dev: false
 
   /@types/estree@1.0.1:
@@ -955,8 +955,8 @@ packages:
       '@types/pbf': 3.0.2
     dev: false
 
-  /@types/node@20.2.3:
-    resolution: {integrity: sha512-pg9d0yC4rVNWQzX8U7xb4olIOFuuVL9za3bzMT2pu2SU0SNEi66i2qrvhE2qt0HvkhuCaWJu7pLNOt/Pj8BIrw==}
+  /@types/node@20.2.4:
+    resolution: {integrity: sha512-ni5f8Xlf4PwnT/Z3f0HURc3ZSw8UyrqMqmM3L5ysa7VjHu8c3FOmIo1nKCcLrV/OAmtf3N4kFna/aJqxsfEtnA==}
 
   /@types/parse-json@4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
@@ -1023,7 +1023,7 @@ packages:
   /@types/websocket@1.0.5:
     resolution: {integrity: sha512-NbsqiNX9CnEfC1Z0Vf4mE1SgAJ07JnRYcNex7AJ9zAVzmiGHmjKFEk7O4TJIsgv2B1sLEb6owKFZrACwdYngsQ==}
     dependencies:
-      '@types/node': 20.2.3
+      '@types/node': 20.2.4
 
   /@unocss/astro@0.51.13(vite@4.3.8):
     resolution: {integrity: sha512-Dul0ZJNwseGBxngBMfghfTsf0quf4HcQcqJuIDzA1T+ueavpwf4QScwbDuS0BqFO4ZiIVSItA7f6eLe31PHUmw==}
@@ -1815,7 +1815,7 @@ packages:
   /delaunator@5.0.0:
     resolution: {integrity: sha512-AyLvtyJdbv/U1GkiS6gUUzclRoAY4Gs75qkMygJJhU75LW4DNuSF2RMzpxs9jw9Oz1BobHjTdkG3zdP55VxAqw==}
     dependencies:
-      robust-predicates: 3.0.1
+      robust-predicates: 3.0.2
     dev: false
 
   /destr@1.2.2:
@@ -2568,8 +2568,8 @@ packages:
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
     dev: true
 
-  /robust-predicates@3.0.1:
-    resolution: {integrity: sha512-ndEIpszUHiG4HtDsQLeIuMvRsDnn8c8rYStabochtUeCvfuvNptb5TUbVD68LRAILPX7p9nqQGh4xJgn3EHS/g==}
+  /robust-predicates@3.0.2:
+    resolution: {integrity: sha512-IXgzBWvWQwE6PrDI05OvmXUIruQTcoMDzRsOd5CDvHCVLcLHMTSYvOK5Cm46kWqlV3yAbuSpBZdJ5oP5OUoStg==}
     dev: false
 
   /rollup@3.23.0:
@@ -2659,8 +2659,8 @@ packages:
     resolution: {integrity: sha512-Orov6g6BB1sDfYgzWfTHDOxamtX1bE/zo104Dh9e6fqJ3PooipYyfJ0pUmrZO2wAvO8YbEyeFrkV91XTsGMSrw==}
     dev: false
 
-  /supabase@1.62.4:
-    resolution: {integrity: sha512-Be7nIOQoFiI0qYjYhKS+9/UUA4QKq7kdqmv4KBvOJ5mgOuohE3EuOHJxlDSklhtqInFkKdQUuj/wsmA9xBWg8w==}
+  /supabase@1.63.2:
+    resolution: {integrity: sha512-gW0vPm4sU2lM1i6LhsgmRGLvoIFhKnR4mx/Qj9qi92ofNwdsTmwidNOSzZsx0HhsoLNJqsZkS5zBExBfjcO5rA==}
     hasBin: true
     requiresBuild: true
     dependencies:
