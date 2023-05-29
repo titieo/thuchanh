@@ -11,10 +11,17 @@ import transformerVariantGroup from '@unocss/transformer-variant-group';
 
 export default defineConfig({
 	safelist: 'group-hover:border-[25px]'.split(' '),
+
 	presets: [
 		presetUno(),
 		presetAttributify(),
-		presetWind(),
+		presetWind({
+			theme: {
+				animation: {
+					'spin-slow': 'spin 3s linear infinite',
+				},
+			},
+		}),
 		presetWebFonts({
 			// use axios with an https proxy
 			/*
