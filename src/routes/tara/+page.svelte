@@ -28,7 +28,7 @@
 	let { dates, session } = data;
 	$: ({ dates } = data);
 	dates.sort((a, b) => b.id - a.id); // b - a for reverse sort
-	console.log(dates);
+	// console.log(dates);
 	let dates_length = dates.length;
 	// const { form } = createForm();
 	// $: dates = [...dates, ...allDates.splice(size * page, size * (page + 1) - 1)];
