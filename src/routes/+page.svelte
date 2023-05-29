@@ -15,7 +15,7 @@
 
 <!-- <Fullpage> -->
 <main
-	class="grid h-screen w-screen overflow-y-hidden sm:grid-cols-[70vw_30vw] lg:grid-cols-[1.7fr_1fr] grid-rows-[45vh_55vh] font-title overflow-hidden"
+	class="grid h-screen w-screen overflow-y-hidden sm:grid-cols-[70vw_30vw] lg:grid-cols-[1.7fr_1fr] grid-rows-[45vh_55vh] font-title overflow-hidden bg-orange-200 dark:bg-gray-800"
 >
 	<!-- style="background-image: linear-gradient(to bottom right,#fdd9aa,#f1c89b)" -->
 	<div class="text-center prose z-1 flex-col flex-center justify-self-center">
@@ -30,8 +30,8 @@
 			class="flex flex-col items-center no-underline text-black dark:text-white font-bold"
 		>
 			<img
-				class="w-20 h-20 md:(w-24 h-24) lg:(w-30 h-30) rounded-lg hover:rounded-3xl duration-200 transition-all ease-in-out"
-				src="{base}/tam.png"
+				class="w-18 h-18 md:(w-24 h-24) p-2 lg:(w-30 h-30) mb-2 bg-white dark:bg-dark rounded-lg hover:rounded-3xl duration-200 transition-all ease-in-out"
+				src="{base}/tam-new.png"
 				style="object-fit: cover;object-position: 50% 50%;;image-resolution: from-image;"
 				alt=""
 			/>
@@ -42,8 +42,8 @@
 			class="flex flex-col items-center no-underline text-black dark:text-white font-bold"
 		>
 			<img
-				class="w-20 h-20 md:(w-24 h-24) lg:(w-30 h-30) rounded-lg hover:rounded-3xl duration-200 transition-all ease-in-out"
-				src="{base}/hung.jpg"
+				class="w-18 h-18 md:(w-24 h-24) p-2 lg:(w-30 h-30) mb-2 rounded-lg hover:rounded-3xl duration-200 transition-all ease-in-out bg-white dark:bg-dark"
+				src="{base}/hung.png"
 				style="object-fit: cover;object-position: center;"
 				alt=""
 			/>
@@ -57,10 +57,8 @@
 
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
-				width="24"
-				height="24"
 				viewBox="0 0 24 24"
-				class="w-18 h-18 md:(w-24 h-24) p-2 lg:(w-30 h-30) rounded-lg hover:rounded-3xl duration-200 transition-all ease-in-out bg-white dark:bg-dark"
+				class="w-18 h-18 md:(w-24 h-24) p-2 lg:(w-30 h-30) mb-2 rounded-lg hover:rounded-3xl duration-200 transition-all ease-in-out bg-white dark:bg-dark"
 				><path
 					fill="currentColor"
 					d="M3 8V3h19v5H3Zm5 2v11H3V10h5Zm14 11h-5V10h5v11Zm-7-11v11h-5V10h5Z"
@@ -94,7 +92,7 @@
 		}
 	}
 	.khorlo {
-		animation: spin 10s linear infinite;
+		animation: spin 14s linear infinite;
 	}
 	@keyframes spin {
 		from {
