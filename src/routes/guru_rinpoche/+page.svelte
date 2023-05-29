@@ -99,7 +99,8 @@
 
 <!-- TODO: https://unocss.dev/presets/wind#breakpoints - Add breakpoints -->
 
-<main class="overflow-hidden">
+<!-- <main class="sm:overflow-hidden"> -->
+<main class="h-screen sm:overflow-hidden">
 	<StatisticPage pictureName="guru_rinpoche.webp" reverse>
 		<div
 			class="scrollbar scrollbar-rounded dark:(scrollbar-track-color-gray-700 scrollbar-thumb-color-gray-600) lg:max-w-60vw overflow-y-scroll max-h-[20rem] flex flex-col gap-4"

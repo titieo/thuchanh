@@ -20,7 +20,7 @@
 </script>
 
 <div
-	class="card w-full group flex gap-4 items-center justify-between max-w-60vw"
+	class="card w-full group flex gap-2 md:gap-4 items-center justify-between sm:max-w-60vw"
 >
 	<!-- style="order:{dates.length - order}" -->
 	<h3 class="text-sm sm:text-base md:text-lg font-title">

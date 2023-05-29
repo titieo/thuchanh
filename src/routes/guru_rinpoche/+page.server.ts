@@ -5,7 +5,7 @@ export const load: PageServerLoad = async ({ url, locals: { getSession } }) => {
 	const session = await getSession();
 	const { data: data, error } = await supabase
 		.from('main')
-		.select('*')
+		.select('id, created_at, lhs, seven_lines')
 		.gt('lhs', 0);
 	return {
 		dates: data ?? [],

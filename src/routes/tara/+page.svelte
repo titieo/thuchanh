@@ -10,7 +10,7 @@
 	import StatisticLineGraph from '$lib/StatisticLineGraph.svelte';
 	import StatisticPage from '$lib/StatisticPage.svelte';
 	import DateCard from '$lib/DateCard.svelte';
-	import { supabase } from '$lib/supabaseClient';
+	import { supabase } from '$lib/supabaseClient.ts';
 
 	import SubmitForm from '$lib/SubmitForm.svelte';
 	import OpenMenu from '$lib/OpenMenu.svelte';
@@ -121,7 +121,8 @@
 <svelte:head>
 	<title>Green Tara</title>
 </svelte:head>
-<main style="height: 100vh" class="h-screen overflow-hidden">
+
+<main class="h-screen sm:overflow-hidden">
 	<StatisticPage pictureName="0.green_tara.png">
 		<!-- TODO: Check back on fixing view width -->
 		<div

@@ -7,10 +7,14 @@
 	// export let menuVisible;
 </script>
 
-<div use:clickOutsideAction on:clickoutside={() => (menuVisible = false)}>
+<div
+	use:clickOutsideAction
+	on:clickoutside={() => (menuVisible = false)}
+	class="z-100"
+>
 	{#if menuVisible}
 		<nav
-			class="fixed gap-1 bottom-16 text-xs md:(text-sm bottom-21) right-2 rounded-md cursor-pointer p-4 flex flex-col border-gray-900 shadow border-2 min-w-[8rem] bg-white dark:bg-gray-500"
+			class="fixed gap-1 bottom-16 text-xs md:(text-sm bottom-21) right-2 rounded-md cursor-pointer p-4 flex flex-col border-gray-900 shadow border-2 min-w-[8rem] bg-white dark:bg-gray-500 z-100"
 			transition:fly
 		>
 			{#if session}
@@ -71,7 +75,7 @@
 		</nav>
 	{/if}
 
-	<div class="fixed bottom-1 right-1 sm:right-2 py-3 sm:max-w-xl mx-auto">
+	<div class="fixed bottom-1 right-1 sm:right-2 py-3 sm:max-w-xl mx-auto z-100">
 		<nav>
 			<button
 				class="rounded-full text-gray-500 w-10 h-10 md:w-14 md:h-14 relative focus:outline-none bg-white cursor-pointer"
