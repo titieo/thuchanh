@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { fade } from 'svelte/transition';
+	import { fly } from 'svelte/transition';
 	import 'virtual:uno.css';
 	import { base } from '$app/paths';
 	import { onMount } from 'svelte';
@@ -48,10 +48,14 @@
 	<meta name="theme-color" content="#ffffff" /></svelte:head
 >
 <!-- {#key data.pathname} -->
-<div
-	transition:fade
-	class="max-h-screen font-content dark:bg-gray-800 dark:text-white"
->
-	<slot />
-</div>
+{#key data.url}
+	<!-- transition:fade -->
+	<div
+		in:fly={{ y: -100, duration: 500, delay: 500 }}
+		out:fly={{ y: 100, duration: 500 }}
+		class="max-h-screen font-content dark:bg-gray-800 dark:text-white"
+	>
+		<slot />
+	</div>
+{/key}
 <!-- {/key} -->

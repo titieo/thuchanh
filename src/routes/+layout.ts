@@ -8,7 +8,7 @@ import type { LayoutLoad } from './$types';
 import type { Database } from '../DatabaseDefinitions';
 
 export const prerender = true;
-export const load: LayoutLoad = async ({ fetch, data, depends }) => {
+export const load: LayoutLoad = async ({ fetch, data, depends, url }) => {
 	depends('supabase:auth');
 
 	const supabase = createSupabaseLoadClient<Database>({
@@ -22,5 +22,5 @@ export const load: LayoutLoad = async ({ fetch, data, depends }) => {
 		data: { session },
 	} = await supabase.auth.getSession();
 
-	return { supabase, session };
+	return { supabase, session, url: url.pathname };
 };
