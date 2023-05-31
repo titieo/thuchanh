@@ -31,6 +31,6 @@
 		"felte": "^1.2.7",
 		"svelte-infinite-scroll": "^2.0.1",
 		"svelte-legos": "^0.2.1",
-		"unocss": "^0.52.4"
+		"unocss": "^0.52.5"
 	}
 }
