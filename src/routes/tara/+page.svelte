@@ -135,8 +135,13 @@
 				<!-- {page} for infinite scrolling -->
 				<DateCard {created_at}>
 					<p class="text-xs lg:text-base text-right">
-						{tara * 108} Biến Green Tara ({hang_phuc}
-						Phút Kiết Già Hàng Phục) <br />
+						{tara * 108} Biến Green Tara
+						{#if hang_phuc != null}
+							<span>
+								({hang_phuc} Phút Kiết Già Hàng Phục)
+							</span>
+						{/if}
+						<br />
 						Tán thán 21 Tara: {taras_homage} Lần
 						{#if lay_dai != null}
 							<span>
