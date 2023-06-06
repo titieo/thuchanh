@@ -6,7 +6,7 @@
 
 	let { dates } = data;
 	$: ({ dates } = data);
-	dates.sort((a, b) => a.id - b.id);
+	dates.sort((a, b) => b.id - a.id);
 	const inputDates = dates.map((ele) => ({
 		created_at: ele.created_at,
 		tara: ele.tara === null ? '' : ele.tara,
