@@ -84,7 +84,7 @@
 </svelte:head>
 
 <div
-	class="flex flex-col scrollbar scrollbar-rounded scrollbar-w-2px scrollbar-h-4px"
+	class="flex flex-col overflow-y-scroll max-h-screen lg:overflow-x-hidden scrollbar scrollbar-rounded scrollbar-w-2px scrollbar-h-4px"
 >
 	<div
 		class="overflow-x-auto sm:-mx-6 lg:-mx-8 scrollbar scrollbar-rounded scrollbar-w-2px scrollbar-h-4px"
