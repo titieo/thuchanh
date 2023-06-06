@@ -18,16 +18,30 @@
 	transition:fade={{ duration: 500 }}
 >
 	<slot />
+	<!-- use:hotKeyAction={{
+				code: 'Space',
+				cb: handleClick,
+			}} -->
 	<button
 		type="submit"
-		class="relative inline-flex items-center justify-start inline-block px-8 py-4 overflow-hidden font-medium transition-all bg-green-600 rounded-full hover:bg-white group cursor-pointer col-start-1 row-start-5 justify-self-start self-center"
+		class="px-3 py-1.5 sm:(px-4 py-2) relative rounded group overflow-hidden font-medium bg-purple-50 text-purple-600 inline-block cursor-pointer font-bold text-base sm:text-lg flex-shrink w-max
+       relative inline-flex cursor-pointer col-start-1 row-start-5 justify-self-start self-center"
 	>
 		<span
-			class="absolute inset-0 border-0 group-hover:border-[25px] ease-linear duration-100 transition-all border-white rounded-full"
+			class="absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-200 ease-out transform translate-y-0 bg-purple-600 group-hover:h-full opacity-90"
 		/>
-		<span
-			class="relative w-full text-left text-base text-white transition-colors duration-200 ease-in-out group-hover:text-green-600 text-lg"
-			>Submit</span
+		<span class="relative group-hover:text-white flex-center"
+			>Submit<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="1em"
+				height="1em"
+				viewBox="0 0 24 24"
+				class="ml-1"
+				><path
+					fill="currentColor"
+					d="m12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8l-8-8z"
+				/></svg
+			></span
 		>
 	</button>
 </form>
