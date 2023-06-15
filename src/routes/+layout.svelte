@@ -5,11 +5,23 @@
 	import { onMount } from 'svelte';
 	import { invalidate } from '$app/navigation';
 	import type { LayoutData } from './$types';
-
+	import { browser } from '$app/environment';
 	export let data: LayoutData;
 
 	$: ({ supabase, session } = data);
-
+	if (browser) {
+		if (
+			localStorage.theme === 'dark' ||
+			(!('theme' in localStorage) &&
+				window.matchMedia('(prefers-color-scheme: dark)').matches)
+		) {
+			document.documentElement.classList.add('dark');
+			// darkMode = true;
+		} else {
+			document.documentElement.classList.remove('dark');
+			// darkMode = false;
+		}
+	}
 	onMount(() => {
 		const {
 			data: { subscription },
