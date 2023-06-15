@@ -123,7 +123,8 @@
 </svelte:head>
 
 <main class="h-screen sm:overflow-hidden">
-	<StatisticPage pictureName="0.green_tara.png">
+	<StatisticPage pictureName="21_tara.webp">
+		<!-- <StatisticPage pictureName="0.green_tara.png"> -->
 		<!-- TODO: Check back on fixing view width -->
 		<div
 			class="scrollbar scrollbar-rounded lg:max-w-60vw dark:(scrollbar-track-color-gray-700 scrollbar-thumb-color-gray-600) overflow-y-scroll max-h-[90vh] flex flex-col gap-4 m-2 p-2

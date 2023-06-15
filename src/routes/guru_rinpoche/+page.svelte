@@ -47,9 +47,8 @@
 				dates = [
 					...dates,
 					{
-						tara: values.tara,
-						taras_homage: values.taras_homage,
-						hang_phuc: values.hang_phuc,
+						lhs: values.lhs,
+						seven_lines: values.seven_lines,
 						created_at: created_date,
 					},
 				];
@@ -77,7 +76,7 @@
 	lineGraphDates.forEach((e, i) => {
 		DataRecord.push({
 			x: i,
-			y: e.lhs,
+			y: e.lhs / 21,
 			y1: e.seven_lines,
 		});
 	});
@@ -88,7 +87,7 @@
 	];
 
 	const bulletLegendItems = [
-		'Guru Rinpoche',
+		'Guru Rinpoche (x21)',
 		'7 Lines Homages to Guru Rinpoche',
 	].map((label) => ({ name: label }));
 </script>
