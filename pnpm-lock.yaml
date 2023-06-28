@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -53,8 +53,8 @@ devDependencies:
     specifier: ^2.4.3
     version: 2.4.3(svelte@3.59.1)
   supabase:
-    specifier: ^1.68.6
-    version: 1.68.6
+    specifier: ^1.74.2
+    version: 1.74.2
   svelte:
     specifier: ^3.59.1
     version: 3.59.1
@@ -2545,8 +2545,8 @@ packages:
     resolution: {integrity: sha512-Orov6g6BB1sDfYgzWfTHDOxamtX1bE/zo104Dh9e6fqJ3PooipYyfJ0pUmrZO2wAvO8YbEyeFrkV91XTsGMSrw==}
     dev: false
 
-  /supabase@1.68.6:
-    resolution: {integrity: sha512-3+0SBoY4oRZ1GkDUkMaUfsIAk0ofhw0EntJJo+GZNrciXE0lDZ7AX31g63AyJ1yfNxElbYBcrWIMtsZgeDG35w==}
+  /supabase@1.74.2:
+    resolution: {integrity: sha512-cOuEi4DUVNMoAX1VWC6FizRb9OHnMFKD37L8Wi9U+HgDmgzIFMX7LdCXAflC5jGF+Xvix4/iPaff7fBHDMlvPw==}
     engines: {npm: '>=8'}
     hasBin: true
     requiresBuild: true
