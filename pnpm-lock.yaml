@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -50,8 +50,8 @@ devDependencies:
     specifier: ^0.53.1
     version: 0.53.1
   date-picker-svelte:
-    specifier: ^2.4.3
-    version: 2.4.3(svelte@3.59.1)
+    specifier: ^2.5.1
+    version: 2.5.1(svelte@3.59.1)
   supabase:
     specifier: ^1.68.6
     version: 1.68.6
@@ -1699,10 +1699,10 @@ packages:
     engines: {node: '>= 12'}
     dev: true
 
-  /date-picker-svelte@2.4.3(svelte@3.59.1):
-    resolution: {integrity: sha512-aYQzLNc7MfMWYc5InrCQv26geewkTeLg0x4R5Rr3H4YJS1i1VucQxOIvObjaJ64ylCBwVnEpQeO5iBq3semn1A==}
+  /date-picker-svelte@2.5.1(svelte@3.59.1):
+    resolution: {integrity: sha512-8lMKjgzfUMh7+1TDiKafcxdZLNU+eD8YoH1a2a8CowELfliiuu9pABYaVoxVJoKGcRNZW5rU9e/rUaJifxwZNw==}
     peerDependencies:
-      svelte: ^3.24.0
+      svelte: ^3.24.0 || ^4.0.0
     dependencies:
       svelte: 3.59.1
     dev: true
