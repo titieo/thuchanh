@@ -27,7 +27,7 @@
 		"@supabase/supabase-js": "^2.25.0",
 		"@unovis/svelte": "^1.1.1",
 		"@unovis/ts": "^1.1.1",
-		"dayjs": "^1.11.8",
+		"dayjs": "^1.11.9",
 		"felte": "^1.2.9",
 		"svelte-legos": "^0.2.1",
 		"svelte-parts": "^0.0.6",
