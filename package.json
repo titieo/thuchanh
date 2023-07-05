@@ -15,7 +15,7 @@
 		"date-picker-svelte": "^2.5.1",
 		"supabase": "^1.75.3",
 		"svelte": "^4.0.3",
-		"svelte-headless-table": "^0.17.3",
+		"svelte-headless-table": "^0.17.4",
 		"typescript": "^5.1.6",
 		"unocss-preset-scrollbar": "^0.2.1",
 		"vite": "^4.3.9"

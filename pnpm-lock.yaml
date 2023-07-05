@@ -59,8 +59,8 @@ devDependencies:
     specifier: ^4.0.3
     version: 4.0.3
   svelte-headless-table:
-    specifier: ^0.17.3
-    version: 0.17.3(svelte@4.0.3)
+    specifier: ^0.17.4
+    version: 0.17.4(svelte@4.0.3)
   typescript:
     specifier: ^5.1.6
     version: 5.1.6
@@ -2614,8 +2614,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: false
 
-  /svelte-headless-table@0.17.3(svelte@4.0.3):
-    resolution: {integrity: sha512-r5IRiE0RA8SPOQK7YxK6XMKAbDX00QG4AbD3sgVTH7magESKpRqe6zLyY5NEZorHsHLWzP8d+YilY/NmfneflQ==}
+  /svelte-headless-table@0.17.4(svelte@4.0.3):
+    resolution: {integrity: sha512-UUlb0Gv2IKbDO+Q4UU7O8BnDJMZwJP8JHkB74wyQu6B4Y8L1nf+HD1h2erUbClUjKXtoYpsG05ZuC2Xxl4Bf4A==}
     dependencies:
       svelte-keyed: 1.1.6(svelte@4.0.3)
       svelte-render: 1.6.0
