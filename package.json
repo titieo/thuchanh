@@ -14,7 +14,7 @@
 		"@unocss/transformer-variant-group": "^0.53.4",
 		"date-picker-svelte": "^2.5.1",
 		"supabase": "^1.75.3",
-		"svelte": "^4.0.4",
+		"svelte": "^4.0.5",
 		"typescript": "^5.1.6",
 		"unocss-preset-scrollbar": "^0.2.1",
 		"vite": "^4.3.9"
