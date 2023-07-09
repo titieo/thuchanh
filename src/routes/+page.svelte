@@ -37,6 +37,7 @@
 			/>
 			Green Tara</a
 		>
+		<!--
 		<a
 			href="{base}/guru_rinpoche"
 			class="flex flex-col items-center no-underline text-black dark:text-white font-bold"
@@ -49,6 +50,7 @@
 			/>
 			Guru Rinpoche</a
 		>
+         -->
 		<a
 			href="{base}/table"
 			class="flex flex-col items-center no-underline text-black dark:text-white font-bold"
