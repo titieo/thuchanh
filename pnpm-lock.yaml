@@ -50,8 +50,8 @@ devDependencies:
     specifier: ^0.53.4
     version: 0.53.4
   date-picker-svelte:
-    specifier: ^2.5.1
-    version: 2.5.1(svelte@4.0.4)
+    specifier: ^2.6.0
+    version: 2.6.0(svelte@4.0.4)
   supabase:
     specifier: ^1.75.3
     version: 1.75.3
@@ -1720,8 +1720,8 @@ packages:
     engines: {node: '>= 12'}
     dev: true
 
-  /date-picker-svelte@2.5.1(svelte@4.0.4):
-    resolution: {integrity: sha512-8lMKjgzfUMh7+1TDiKafcxdZLNU+eD8YoH1a2a8CowELfliiuu9pABYaVoxVJoKGcRNZW5rU9e/rUaJifxwZNw==}
+  /date-picker-svelte@2.6.0(svelte@4.0.4):
+    resolution: {integrity: sha512-xTzF1GTuAB1/NgDgM+no1y2raAfyZAMFtgEvrlL1VcHJYweggFoCK+1LHfMnVu4cJPLtC+NCRLThCMb/pu1xsg==}
     peerDependencies:
       svelte: ^3.24.0 || ^4.0.0
     dependencies:
