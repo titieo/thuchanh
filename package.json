@@ -9,7 +9,7 @@
 	},
 	"devDependencies": {
 		"@supabase/auth-helpers-sveltekit": "^0.10.1",
-		"@sveltejs/adapter-netlify": "^2.0.7",
+		"@sveltejs/adapter-netlify": "^2.0.8",
 		"@sveltejs/kit": "^1.22.0",
 		"@unocss/transformer-variant-group": "^0.53.4",
 		"date-picker-svelte": "^2.5.1",
