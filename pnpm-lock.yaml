@@ -53,8 +53,8 @@ devDependencies:
     specifier: ^2.5.1
     version: 2.5.1(svelte@4.0.4)
   supabase:
-    specifier: ^1.75.3
-    version: 1.75.3
+    specifier: ^1.77.6
+    version: 1.77.6
   svelte:
     specifier: ^4.0.4
     version: 4.0.4
@@ -2582,8 +2582,8 @@ packages:
     resolution: {integrity: sha512-Orov6g6BB1sDfYgzWfTHDOxamtX1bE/zo104Dh9e6fqJ3PooipYyfJ0pUmrZO2wAvO8YbEyeFrkV91XTsGMSrw==}
     dev: false
 
-  /supabase@1.75.3:
-    resolution: {integrity: sha512-o6rd6v09QstJACYbcNPHaPPnCSi6CO5o2g4ZiZ45V+RYBQasPk8UCOqzJEzi/Ahizq3rb1bJBdwYdEpDmlepPg==}
+  /supabase@1.77.6:
+    resolution: {integrity: sha512-eBVTStN/55RMmf2pNTpmd28afNj5Pn7ta0JudpWDylcaIJH0W+oAnuWdwovCkFWIa5W+nBwoajYRvQKHzwMkkQ==}
     engines: {npm: '>=8'}
     hasBin: true
     requiresBuild: true
