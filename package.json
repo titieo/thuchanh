@@ -30,6 +30,6 @@
 		"felte": "^1.2.11",
 		"svelte-legos": "^0.2.1",
 		"svelte-parts": "^0.0.6",
-		"unocss": "^0.53.4"
+		"unocss": "^0.54.0"
 	}
 }
