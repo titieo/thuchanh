@@ -38,8 +38,8 @@ dependencies:
 
 devDependencies:
   '@supabase/auth-helpers-sveltekit':
-    specifier: ^0.10.1
-    version: 0.10.1(@supabase/supabase-js@2.26.0)(@sveltejs/kit@1.22.0)
+    specifier: ^0.10.2
+    version: 0.10.2(@supabase/supabase-js@2.26.0)(@sveltejs/kit@1.22.0)
   '@sveltejs/adapter-netlify':
     specifier: ^2.0.7
     version: 2.0.7(@sveltejs/kit@1.22.0)
@@ -531,8 +531,8 @@ packages:
       jose: 4.14.4
     dev: true
 
-  /@supabase/auth-helpers-sveltekit@0.10.1(@supabase/supabase-js@2.26.0)(@sveltejs/kit@1.22.0):
-    resolution: {integrity: sha512-28pXA76s7lhw5YSbfB8d8goh7UKHZk2GCU2lIsf3KQLfBhIeYtwO3SL7SNKa50x9enFGgIQjlHj6ukSYeeR+1A==}
+  /@supabase/auth-helpers-sveltekit@0.10.2(@supabase/supabase-js@2.26.0)(@sveltejs/kit@1.22.0):
+    resolution: {integrity: sha512-azQqh4ofgB+ewHBGQPp77R9552jD0DXZMd0QQQQvsgLUdGVghRrydW11491473DvcONoy2KMWUShVxccjzo6Gw==}
     peerDependencies:
       '@supabase/supabase-js': ^2.19.0
       '@sveltejs/kit': ^1.15.4
