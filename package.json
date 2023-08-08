@@ -11,7 +11,7 @@
 		"@supabase/auth-helpers-sveltekit": "^0.10.1",
 		"@sveltejs/adapter-netlify": "^2.0.7",
 		"@sveltejs/kit": "^1.22.0",
-		"@unocss/transformer-variant-group": "^0.53.4",
+		"@unocss/transformer-variant-group": "^0.54.2",
 		"date-picker-svelte": "^2.5.1",
 		"supabase": "^1.75.3",
 		"svelte": "^4.0.4",

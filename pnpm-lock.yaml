@@ -47,8 +47,8 @@ devDependencies:
     specifier: ^1.22.0
     version: 1.22.0(svelte@4.0.4)(vite@4.3.9)
   '@unocss/transformer-variant-group':
-    specifier: ^0.53.4
-    version: 0.53.4
+    specifier: ^0.54.2
+    version: 0.54.2
   date-picker-svelte:
     specifier: ^2.5.1
     version: 2.5.1(svelte@4.0.4)
@@ -1028,6 +1028,10 @@ packages:
   /@unocss/core@0.53.4:
     resolution: {integrity: sha512-JvmpuFOiJ8NkGzRmh0dCUmNdYjr8MmMtCX+czCmSnX2kvKyQjJIw3RIu84/DQbd/M/yxZmPjle8DrcZ1Ql86rQ==}
 
+  /@unocss/core@0.54.2:
+    resolution: {integrity: sha512-PyyJOJtZ2K0BVSawAA/5X46w3Vgj/39jy+2EGKrT0KD4pbYid8oQo84OkXEEms5gAnIAAZHayGqs43zi/FRp0A==}
+    dev: true
+
   /@unocss/extractor-arbitrary-variants@0.53.4:
     resolution: {integrity: sha512-ydkfObZALqRqe/M68hBsIfT6KsUFm3nBD/4xUf4hvOiIySwptzUWYliVSoPHqhEq8L122oAEG1i5Yg8kQUUJZQ==}
     dependencies:
@@ -1139,6 +1143,12 @@ packages:
     resolution: {integrity: sha512-ir3FMZV1PQ1oUZU0mYTZ5kIrsn68vwUJtOiCcqq2XMSAM4NK8EBdqRqd0mg7he3AjhPzd//Rdx8XpfVFbw7EVw==}
     dependencies:
       '@unocss/core': 0.53.4
+
+  /@unocss/transformer-variant-group@0.54.2:
+    resolution: {integrity: sha512-hOl3x63rTaGl6kdLMLZ31Hl7SASxxVNc2Z7IWpZDMZX0qbK/lK6TPvI/VJaXqznUtA8qvyDYBVx7XAEMnTOANw==}
+    dependencies:
+      '@unocss/core': 0.54.2
+    dev: true
 
   /@unocss/vite@0.53.4(vite@4.3.9):
     resolution: {integrity: sha512-s2t7Es2L788MSyPAJUksUaiTLBGyISiyESelyGxBwDpAR6ddHiKB9LU2MVLTU289rmnhebWHFvw7lbE+Trs/Dw==}
