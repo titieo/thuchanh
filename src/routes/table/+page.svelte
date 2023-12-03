@@ -12,6 +12,7 @@
 		hang_phuc: ele.hang_phuc === null ? '' : ele.hang_phuc,
 		lhs: ele.lhs === null ? '' : ele.lhs,
 		seven_lines: ele.seven_lines === null ? '' : ele.seven_lines,
+		vo_niem: ele.vo_niem === null ? '' : ele.vo_niem,
 	}));
 
 	let sum = {
@@ -22,6 +23,7 @@
 		hang_phuc: 'N/A',
 		lhs: 0,
 		seven_lines: 0,
+		vo_niem: 'N/A',
 	};
 
 	dates.forEach((ele) => {
@@ -36,6 +38,7 @@
 		tara: 'Green Tara',
 		taras_homage: '21 Tara Homages',
 		lay_dai: 'Lạy Dài',
+		vo_niem: 'An trú Vô Niệm',
 		hang_phuc: 'Kiết Già Hàng Phục',
 		lhs: 'Guru Rinpoche',
 		seven_lines: 'Seven Lines Guru Rinpoche',

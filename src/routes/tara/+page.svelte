@@ -53,12 +53,14 @@
 						taras_homage: values.taras_homage + lastDate.taras_homage,
 						hang_phuc: values.hang_phuc + lastDate.hang_phuc,
 						lay_dai: values.lay_dai + lastDate.lay_dai,
+						vo_niem: values.vo_niem + lastDate.vo_niem,
 					})
 					.eq('created_at', created_date);
 				lastDate.tara += values.tara;
 				lastDate.taras_homage += values.taras_homage;
 				lastDate.hang_phuc += values.hang_phuc;
 				lastDate.lay_dai += values.lay_dai;
+				lastDate.vo_niem += values.vo_niem;
 			} else {
 				await supabase.from('main').insert([
 					{
@@ -67,6 +69,7 @@
 						hang_phuc: values.hang_phuc,
 						created_at: created_date,
 						lay_dai: values.lay_dai,
+						vo_niem: values.vo_niem,
 					},
 				]);
 
@@ -77,6 +80,7 @@
 						taras_homage: values.taras_homage,
 						hang_phuc: values.hang_phuc,
 						created_at: created_date,
+						vo_niem: values.vo_niem,
 					},
 				];
 			}
@@ -98,6 +102,7 @@
 			y1: e.taras_homage,
 			y2: e.lay_dai / 3,
 			y3: e.hang_phuc,
+			y4: e.vo_niem,
 		});
 	});
 	// const x = (DataRecord) => DataRecord.x;
@@ -106,6 +111,7 @@
 		(DataRecord: { y1: number }) => DataRecord.y1,
 		(DataRecord: { y2: number }) => DataRecord.y2,
 		(DataRecord: { y3: number }) => DataRecord.y3,
+		(DataRecord: { y4: number }) => DataRecord.y4,
 	];
 
 	const bulletLegendItems = [
@@ -113,6 +119,7 @@
 		'21 Tara Homages',
 		'Lạy dài (x3)',
 		'Hàng Phục',
+		'An trú Vô Niệm (s)',
 	].map((label) => ({ name: label }));
 	// console.log(DataRecord);
 </script>
@@ -131,7 +138,7 @@
             md:(px-4 py-4) md:(mt-4 mr-10)"
 		>
 			<!-- p="x-4 y-4" -->
-			{#each dates as { tara, taras_homage, created_at, hang_phuc, lay_dai, tam }, i}
+			{#each dates as { tara, taras_homage, created_at, hang_phuc, lay_dai, vo_niem }, i}
 				<!-- {#each dates as { tara, taras_homage, created_at, lay_dai, lhs, hang_phuc, tam, qt_chu_tara }, i} -->
 				<!-- {page} for infinite scrolling -->
 				<DateCard {created_at}>
@@ -144,6 +151,11 @@
 						{#if hang_phuc != null}
 							<span>
 								({hang_phuc} Phút Kiết Già Hàng Phục)
+							</span>
+						{/if}
+						{#if vo_niem != null}
+							<span>
+								({vo_niem}s Vô Niệm)
 							</span>
 						{/if}
 						<br />
@@ -177,6 +189,7 @@
 
 	<!-- Start of the form -->
 	{#if visible && session}
+		<!-- {#if true} -->
 		<SubmitForm bind:visible {form}>
 			<div class="col-start-1 row-start-1">
 				<h4>Green Tara (Chuỗi)</h4>
@@ -213,6 +226,10 @@
 					class="py-2 px-4 mt-2 rounded-md"
 				/>
 				<!-- required={true} for form -->
+			</div>
+			<div class="col-start-2 row-start-5">
+				<h4>Thời gian An Trú Vô Niệm (giây)</h4>
+				<input type="number" name="vo_niem" class="py-2 px-4 mt-2 rounded-md" />
 			</div>
 		</SubmitForm>
 	{/if}

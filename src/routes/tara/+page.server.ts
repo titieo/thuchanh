@@ -7,7 +7,7 @@ export const load: PageServerLoad = async ({ url, locals: { getSession } }) => {
 	// console.log(session);
 	const { data } = await supabase
 		.from('main')
-		.select('id, created_at, tara, taras_homage, lay_dai, hang_phuc');
+		.select('id, created_at, tara, taras_homage, lay_dai, hang_phuc, vo_niem');
 	return {
 		dates: data ?? [],
 		session:
